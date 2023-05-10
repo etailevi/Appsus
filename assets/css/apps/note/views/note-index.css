@@ -1,1 +1,22 @@
  /* note index */
+
+ .note-index img {
+     width: 25px;
+ }
+
+ .note-input {
+     position: relative;
+     padding: 0;
+     margin: 0;
+ }
+
+ .note-input input {
+     height: 20px;
+     margin: 0;
+     padding-left: 30px;
+ }
+
+ .note-input img {
+     position: absolute;
+     transform: translateX(-2em)
+ }
