@@ -32,16 +32,11 @@ export function NotePreview({ note }) {
             <NoteImg />
             <NoteVideo />
             <NoteTodos />
-            <DynamicCmp cmpType={cmpType} name="Muki" onSetFooterStyle={onSetFooterStyle} />
+            <DynamicCmp cmpType={cmpType} name="Muki" onSetNoteStyle={onSetNoteStyle} />
         </section>
     )
 }
 
 function DynamicCmp(props) {
-    switch (props.cmpType) {
-        case 'color':
-            return <ColorInput {...props} />
-        case 'fontSize':
-            return <FontsizeInput {...props} />
-    }
+    return <ColorInput {...props} />
 }
