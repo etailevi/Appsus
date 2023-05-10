@@ -62,7 +62,6 @@ function query(filterBy = {}) {
                 notes = notes.filter(note => regExp.test(note.info.title))
             }
             if (filterBy.type) {
-                console.log('hello')
                 notes = notes.filter(note => note.type === filterBy.type)
             }
             return notes
