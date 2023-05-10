@@ -57,15 +57,14 @@ export const noteService = {
 function query(filterBy = {}) {
     return storageService.query(NOTE_KEY)
         .then(notes => {
-            // if (filterBy.title) {
-            //     const regExp = new RegExp(filterBy.title, 'i')
-            //     notes = notes.filter(note => regExp.test(note.title))
-            // }
-
-            // if (filterBy.maxPrice) {
-            //     console.log('hello')
-            //     notes = notes.filter(note => note.listPrice.amount <= filterBy.maxPrice)
-            // }
+            if (filterBy.title) {
+                const regExp = new RegExp(filterBy.title, 'i')
+                notes = notes.filter(note => regExp.test(note.info.title))
+            }
+            if (filterBy.type) {
+                console.log('hello')
+                notes = notes.filter(note => note.type === filterBy.type)
+            }
             return notes
         })
 }
@@ -115,3 +114,4 @@ function _createNotes() {
     if (!notes || !notes.length) notes = gNotes
     utilService.saveToStorage(NOTE_KEY, notes)
 }
+

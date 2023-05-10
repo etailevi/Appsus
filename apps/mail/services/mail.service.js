@@ -38,15 +38,22 @@ _createMails()
 function query(filterBy = {}) {
     return storageService.query(MAIL_KEY)
         .then(mails => {
-            // if (filterBy.title) {
-            //     const regExp = new RegExp(filterBy.title, 'i')
-            //     mails = mails.filter(mail => regExp.test(mail.title))
-            // }
-
-            // if (filterBy.maxPrice) {
-            //     console.log('hello')
-            //     mails = mails.filter(mail => mail.listPrice.amount <= filterBy.maxPrice)
-            // }
+            if (filterBy.txt) {
+                const regExp = new RegExp(filterBy.txt, 'i')
+                mails = mails.filter(mail => regExp.test(mail.txt))
+            }
+            if (filterBy.status) {
+                mails = mails.filter(mail => mail.status === filterBy.status)
+            }
+            if (filterBy.isRead) {
+                mails = mails.filter(mail => mail.isRead === filterBy.isRead)
+            }
+            if (filterBy.isStared) {
+                mails = mails.filter(mail => mail.isStared === filterBy.isStared)
+            }
+            if (filterBy.labels) {
+                mails = mails.filter(mail => mail.labels && mail.labels.some(label => filterBy.labels.includes(label)))
+            }
             return mails
         })
 }
