@@ -12,21 +12,23 @@ export const mailService = {
     remove,
     save,
     getDefaultFilter,
-    getEmptyMail,
+    // getEmptyMail,
     getNextMailId,
     getPreviousMailId,
 }
 
-const gEmail = {
-    id: 'e101',
-    subject: 'Miss you!',
-    body: 'Would love to catch up sometimes',
-    isRead: false,
-    sentAt: 1551133930594,
-    removeAt: null,
-    from: 'momo@momo.com',
-    to: 'user@appsus.com'
-}
+const gEmail = [
+    {
+        id: 'e101',
+        subject: 'Miss you!',
+        body: 'Would love to catch up sometimes',
+        isRead: false,
+        sentAt: 1551133930594,
+        removeAt: null,
+        from: 'momo@momo.com',
+        to: 'user@appsus.com'
+    }
+]
 
 const loggedinUser = {
     email: 'user@appsus.com',
@@ -75,7 +77,7 @@ function save(mail) {
 }
 
 function getDefaultFilter() {
-    // return { title: '', maxPrice: '' }
+    return { txt: '', status: '', isRead: '', isStared: '', labels: '' }
 }
 
 function getNextMailId(mailId) {
