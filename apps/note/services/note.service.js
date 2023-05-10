@@ -88,7 +88,7 @@ function save(note) {
 }
 
 function getDefaultFilter() {
-    // return { title: '', maxPrice: '' }
+    return { title: '', type: '' }
 }
 
 function getNextNoteId(noteId) {
