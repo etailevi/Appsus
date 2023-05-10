@@ -1,3 +1,15 @@
 :root {
     --main-bg-color: lightblue;
+    --clr-1-black: #000000;
+    --clr-1-palette: #00b0ff;
+    --clr-2-palette: #00c853;
+    --clr-3-palette: #01579b;
+    --clr-4-palette: #7c4dff;
+    --clr-5-palette: #8d6e63;
+    --clr-6-palette: #8e24aa;
+    --clr-7-palette: #90a4ae;
+    --clr-8-palette: #9fa8da;
+    --clr-9-palette: #a52714;
+    --clr-10-palette: #aeea00;
+
 }
