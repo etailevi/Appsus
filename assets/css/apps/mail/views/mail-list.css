@@ -1,0 +1,10 @@
+.mail-list li {
+    border-block-start: 1px solid black;
+    background-color: white;
+    font-family: Roboto-medium;
+}
+
+.read {
+    background-color: #f2f6fc;
+    font-family: Roboto-light;
+}
