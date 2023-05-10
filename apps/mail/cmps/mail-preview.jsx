@@ -20,7 +20,7 @@ export function MailPreview({ mail }) {
             </div>
             <h3>{utilService.intToFormat(sentAt)}</h3>
             {/* Add that buttons will be shown only once mail is hovered */}
-            <button ><img src="../../../assets/img/imgs-gmail/archive-mail.svg" alt="" /></button>
+            <img src="../../../assets/img/imgs-gmail/archive-mail.svg" alt="" />
             <img onClick={() => onRemoveMail(mail.id)} src="../../../assets/img/imgs-gmail/delete-mail.svg" alt="" />
             <img src="../../../assets/img/imgs-gmail/mark-as-read.svg" alt="" />
             <img src="../../../assets/img/imgs-gmail/schedule.svg" alt="" />
