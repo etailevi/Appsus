@@ -12,7 +12,7 @@ export function MailPreview({ mail }) {
             <img src="../../../assets/img/imgs-gmail/star.svg" alt="" />
             <img src="../../../assets/img/imgs-gmail/label-important.svg" alt="" />
             <div className="mail-preview-content">
-                <Link to={`/mail/${id}`}>
+                <Link to={`/mail/${id}`} className="flex row">
                     <h3>{name}</h3>
                     <h3>{subject}</h3>
                     <h5>{mailText}</h5>
