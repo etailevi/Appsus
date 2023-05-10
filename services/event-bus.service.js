@@ -52,3 +52,6 @@ export function showErrorMsg(txt) {
 //     eventBus.emit('muk', 'Buuuu!')
 //     eventBus.emit('puk', 3)
 // }, 3000)
+
+window.showSuccessMsg = showSuccessMsg
+window.showErrorMsg = showErrorMsg

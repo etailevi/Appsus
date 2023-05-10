@@ -27,7 +27,9 @@ const gEmail = [
         removeAt: null,
         name: 'Ali Express',
         from: 'transaction@notice.aliexpress.com',
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        isArchive: false,
+        isSchedule: false,
     },
     {
         id: _makeId(),
@@ -38,7 +40,9 @@ const gEmail = [
         removeAt: null,
         name: 'Dropbox',
         from: 'no-reply@dropbox.com',
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        isArchive: false,
+        isSchedule: false,
     },
     {
         id: _makeId(),
@@ -49,7 +53,9 @@ const gEmail = [
         removeAt: null,
         name: 'Etai Levi',
         from: 'noreply@github.com',
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        isArchive: false,
+        isSchedule: false,
     },
     {
         id: _makeId(),
@@ -60,7 +66,9 @@ const gEmail = [
         removeAt: null,
         name: 'Amazon.com',
         from: 'auto-confirm@amazon.com',
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        isArchive: false,
+        isSchedule: false,
     },
     {
         id: _makeId(),
@@ -71,7 +79,9 @@ const gEmail = [
         removeAt: null,
         name: 'IBKR FYI',
         from: 'donotreply@interactivebrokers.com',
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        isArchive: false,
+        isSchedule: false,
     },
     {
         id: _makeId(),
@@ -82,7 +92,9 @@ const gEmail = [
         removeAt: null,
         name: 'Les Etincelles',
         from: 'welcome@email.etincelles.com',
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        isArchive: false,
+        isSchedule: false,
     },
     {
         id: _makeId(),
@@ -93,7 +105,9 @@ const gEmail = [
         removeAt: null,
         name: 'TLDR Web Dev',
         from: 'dan@tldrnewsletter.com',
-        to: 'user@appsus.com'
+        to: 'user@appsus.com',
+        isArchive: false,
+        isSchedule: false,
     },
 
 ]
@@ -145,7 +159,7 @@ function save(mail) {
 }
 
 function getDefaultFilter() {
-    return { txt: '', status: '', isRead: '', isStared: '', labels: '' }
+    return { txt: '', status: '', isRead: '', isStared: '', labels: '', isArchive: '', isSchedule: '' }
 }
 
 function getNextMailId(mailId) {

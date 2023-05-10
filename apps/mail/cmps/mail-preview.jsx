@@ -2,7 +2,7 @@ import { utilService } from "../../../services/util.service.js"
 import { mailService } from "../services/mail.service.js"
 const { Link } = ReactRouterDOM
 
-export function MailPreview({ mail, onRemoveMail }) {
+export function MailPreview({ mail, onRemoveMail, onArchiveMail, onMarkRead, onScheduleMail }) {
 
     const { subject, from, sentAt, name, id } = mail
     const mailText = mail.body.substring(0, 30)
@@ -24,10 +24,10 @@ export function MailPreview({ mail, onRemoveMail }) {
                 <li className="flex row">
                     <h3>{utilService.intToFormat(sentAt)}</h3>
                     {/* Add that buttons will be shown only once mail is hovered */}
-                    <img src="../../../assets/img/imgs-gmail/archive-mail.svg" alt="" />
+                    <img onClick={() => onArchiveMail(mail)} src="../../../assets/img/imgs-gmail/archive-mail.svg" alt="" />
                     <img onClick={() => onRemoveMail(mail.id)} src="../../../assets/img/imgs-gmail/delete-mail.svg" alt="" />
-                    <img src="../../../assets/img/imgs-gmail/mark-as-read.svg" alt="" />
-                    <img src="../../../assets/img/imgs-gmail/schedule.svg" alt="" />
+                    <img onClick={() => onMarkRead(mail)} src="../../../assets/img/imgs-gmail/mark-as-read.svg" alt="" />
+                    <img onClick={() => onScheduleMail(mail)} src="../../../assets/img/imgs-gmail/schedule.svg" alt="" />
                 </li>
             </ul>
         </article >
