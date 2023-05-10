@@ -4,6 +4,7 @@ const { Link } = ReactRouterDOM
 import { mailService } from "../services/mail.service.js"
 import { MailList } from "../cmps/mail-list.jsx"
 import { MailFilter } from "../cmps/mail-filter.jsx"
+import { showSuccessMsg } from "../../../services/event-bus.service.js"
 
 export function MailIndex() {
 

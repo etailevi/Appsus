@@ -19,7 +19,6 @@ export function NoteIndex() {
 
     function loadNotes() {
         noteService.query(filterBy).then(setNotes)
-        console.log('entered load notes')
     }
 
     function onRemoveNote(noteId) {
