@@ -1,5 +1,10 @@
-.mail-preview {
-    
+.mail-preview ul {
+    margin: 0;
+    padding-inline-start: 0;
+}
+
+.mail-preview li {
+    padding: 5px;
 }
 
 .mail-preview img {
@@ -7,11 +12,9 @@
     cursor: pointer;
 }
 
-.mail-preview-content {
-    flex: 1;
-}
+.mail-preview-content {}
 
 .mail-sender-name {
-    flex: 1;
     margin-inline-end: 100px;
+    text-align: left;
 }
