@@ -4,7 +4,7 @@ const { Link } = ReactRouterDOM
 
 export function MailPreview({ mail }) {
 
-    const { subject, from, sentAt, name } = mail
+    const { subject, from, sentAt, name, id } = mail
     const mailText = mail.body.substring(0, 30)
     return (
         <article className="mail-preview flex space-between">
