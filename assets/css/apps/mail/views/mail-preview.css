@@ -6,3 +6,12 @@
     width: 20px;
     cursor: pointer;
 }
+
+.mail-preview-content {
+    flex: 1;
+}
+
+.mail-sender-name {
+    flex: 1;
+    margin-inline-end: 100px;
+}
