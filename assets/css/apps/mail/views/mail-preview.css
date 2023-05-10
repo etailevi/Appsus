@@ -10,6 +10,7 @@
 .mail-preview img {
     width: 20px;
     cursor: pointer;
+    padding-inline: 3px;
 }
 
 .mail-preview-content {
@@ -17,6 +18,17 @@
 }
 
 .mail-sender-name {
-    margin-inline-end: 100px;
+    width: 10em;
+    margin-inline-start: 1em;
     text-align: left;
+}
+
+.mail-subject {
+    margin-inline-end: 1em;
+}
+
+.date-recieved {
+    width: 100px;
+    text-align: left;
+    margin-inline-end: 10px;
 }
