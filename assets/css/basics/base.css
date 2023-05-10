@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    font-family: Roboto-Regular, sans-serif;
+    font-weight: 100;
 }
 
 h1,
@@ -20,4 +22,8 @@ img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+}
+
+button {
+    cursor: pointer;
 }
