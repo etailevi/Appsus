@@ -23,13 +23,12 @@ nav a:active {
     color: white;
 }
 
-nav a.active {
-    color: red;
-    font-weight: bold;
-    /* text-decoration: overline; */
-}
-
-
 .app-header a img {
     width: 30px;
+    padding: .3em;
+}
+
+.app-header a img:hover {
+    background-color: white;
+    border-radius: 50%;
 }
