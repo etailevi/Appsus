@@ -7,9 +7,10 @@ export function MailPreview({ mail, onRemoveMail, onArchiveMail, onMarkRead, onS
     const { subject, from, sentAt, name, id } = mail
     const mailText = mail.body.substring(0, 30)
     return (
-        <article className="mail-preview flex space-between">
-            <ul className="clean-list flex space-between row">
-                <li>
+        <article className="mail-preview">
+            <hr />
+            <ul className="clean-list flex space-between align-center row">
+                <li className="flex row">
                     <input type="checkbox" name="first-checkbox" id="" />
                     <img src="../../../assets/img/imgs-gmail/star.svg" alt="" />
                     <img src="../../../assets/img/imgs-gmail/label-important.svg" alt="" />
