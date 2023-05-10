@@ -19,7 +19,6 @@ export function NoteIndex() {
 
     function loadNotes() {
         noteService.query(filterBy).then(setNotes)
-        console.log('entered load notes')
     }
 
     function onRemoveNote(noteId) {
@@ -41,13 +40,17 @@ export function NoteIndex() {
     return (
         <section className="note-index full main-layout">
             {!visible &&
-                <ul className="note-input flex" >
-                    <input type="text" name="" id="" placeholder="Enter a note.." />
-                    <li>
-                        <img src="../../../assets/img/imgs-notes/input-check.svg" alt="" />
-                        <img src="../../../assets/img/imgs-notes/input-brush.svg" alt="" />
-                        <img src="../../../assets/img/imgs-notes/input-image.svg" alt="" />
-                    </li>
+                <ul className="note-input clean-list flex align-center justify-center" >
+                    <div class="add-note-bar">
+                        <li>
+                            <input type="text" name="" id="" placeholder="Enter a note.." />
+                        </li>
+                        <li>
+                            <button><img src="../../../assets/img/imgs-notes/input-check.svg" alt="input-check" /></button>
+                            <button><img src="../../../assets/img/imgs-notes/input-brush.svg" alt="input-brush" /></button>
+                            <button><img src="../../../assets/img/imgs-notes/input-image.svg" alt="input-image" /></button>
+                        </li>
+                    </div>
                 </ul>}
             {visible && <NoteAdd />}
             <NoteFilter DynmicCmp onSetFilter={onSetFilter} filterBy={filterBy} />

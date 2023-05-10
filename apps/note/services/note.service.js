@@ -10,6 +10,7 @@ export const noteService = {
     getDefaultFilter,
     getNextNoteId,
     getPreviousNoteId,
+    getEmptyNote,
 }
 
 const NOTE_KEY = 'noteDB'
@@ -190,3 +191,18 @@ function _createNotes() {
     utilService.saveToStorage(NOTE_KEY, notes)
 }
 
+function getEmptyNote() {
+    return {
+        id: '',
+        createdAt: Date.now(),
+        type: 'NoteTxt',
+        isPinned: false,
+        style: {
+            backgroundColor: '#ffffff'
+        },
+        info: {
+            title: '',
+            txt: ''
+        }
+    }
+}
