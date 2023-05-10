@@ -35,7 +35,6 @@ export function MailIndex() {
         <section>
             {/* <MailFilter onSetFilter={onSetFilter} filterBy={filterBy} /> */}
             <MailList mails={mails} onRemoveMail={onRemoveMail} />
-            <h5>dddd</h5>
         </section>
     )
 }

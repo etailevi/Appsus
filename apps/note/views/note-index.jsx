@@ -1,7 +1,7 @@
 const { useEffect, useState } = React
 const { Link } = ReactRouterDOM
 
-import {NoteFilter} from "../cmps/note-filter.jsx"
+import { NoteFilter } from "../cmps/note-filter.jsx"
 import { NoteList } from "../cmps/note-list.jsx"
 import { noteService } from "../services/note.service.js"
 import { showSuccessMsg } from "../../../services/event-bus.service.js"
@@ -25,18 +25,17 @@ export function NoteIndex() {
             const updatedNotes = notes.filter(note => note.id !== noteId)
             setNotes(updatedNotes)
             showSuccessMsg(`Note removed!`)
-
         })
     }
 
     function onSetFilter(filterBy) {
         setFilterBy(prevFilterBy => ({ ...prevFilterBy, ...filterBy }))
     }
-   
+
     return (
         <section className="note-index full main-layout">
             <NoteFilter onSetFilter={onSetFilter} filterBy={filterBy} />
-            <button><Link to="/book/note-add">Add Note</Link></button>
+            <button><Link to="/note/note-add">Add Note</Link></button>
             <NoteList notes={notes} onRemoveNote={onRemoveNote} />
         </section>
     )

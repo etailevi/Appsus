@@ -8,7 +8,8 @@ export const utilService = {
     getMonthName,
     debounce,
     saveToStorage,
-    loadFromStorage
+    loadFromStorage,
+    intToFormat
 }
 
 function makeId(length = 6) {
@@ -98,4 +99,23 @@ function saveToStorage(key, value) {
 function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
+}
+
+function intToFormat(num) {
+    const sentDate = new Date(num);
+    const currentDate = new Date();
+
+    const isToday = currentDate.toDateString() === sentDate.toDateString();
+    const isCurrentYear = currentDate.getFullYear() === sentDate.getFullYear();
+
+    let formattedDate;
+    if (isToday) {
+        formattedDate = sentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+    } else {
+        formattedDate = `${sentDate.getDate()}/${sentDate.getMonth() + 1}`;
+        if (!isCurrentYear) {
+            formattedDate += `/${sentDate.getFullYear()}`;
+        }
+    }
+    return formattedDate
 }
