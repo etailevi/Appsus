@@ -1,22 +1,51 @@
- /* note index */
+/* note index */
 
- .note-index img {
-     width: 25px;
- }
+.note-index img {
+    width: 25px;
+}
 
- .note-input {
-     position: relative;
-     padding: 0;
-     margin: 0;
- }
+.note-input {
+    padding: 0;
+    margin: auto;
+}
 
- .note-input input {
-     height: 20px;
-     margin: 0;
-     padding-left: 30px;
- }
+.add-note-bar {
+    position: relative;
+} 
 
- .note-input img {
-     position: absolute;
-     transform: translateX(-2em)
- }
+.add-note-bar input {
+    margin: auto;
+    margin-block: 35px;
+    height: 30px;
+    width: 350px;
+    font-size: 1.2em;
+    border-radius: 2em;
+    background-color: white;
+    border: 1px solid gray;
+    padding-inline-start: 0.6em;
+}
+
+.add-note-bar input:focus {
+    outline: none;
+}
+
+.add-note-opts {
+    position: absolute;
+    right: 10px;
+    bottom: 40px;
+}
+
+.add-note-bar button {
+    border: none;
+    padding-inline: 3px;
+    background-color: transparent;
+    color: black;
+    height: 25px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.add-note-bar button:hover {
+    background-color: orange;
+    border-radius: 2em;
+}

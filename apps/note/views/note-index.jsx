@@ -43,9 +43,9 @@ export function NoteIndex() {
                 <ul className="note-input clean-list flex align-center justify-center" >
                     <div class="add-note-bar">
                         <li>
-                            <input type="text" name="" id="" placeholder="Enter a note.." />
+                            <input type="text" name="" id="" placeholder="Add a new note here..." />
                         </li>
-                        <li>
+                        <li className="add-note-opts flex row align-center">
                             <button><img src="../../../assets/img/imgs-notes/input-check.svg" alt="input-check" /></button>
                             <button><img src="../../../assets/img/imgs-notes/input-brush.svg" alt="input-brush" /></button>
                             <button><img src="../../../assets/img/imgs-notes/input-image.svg" alt="input-image" /></button>
@@ -53,9 +53,9 @@ export function NoteIndex() {
                     </div>
                 </ul>}
             {visible && <NoteAdd />}
-            <NoteFilter DynmicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
+            <NoteFilter DynamicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
             <NoteList notes={notes} onRemoveNote={onRemoveNote} />
-        </section>
+        </section >
     )
 }
 
