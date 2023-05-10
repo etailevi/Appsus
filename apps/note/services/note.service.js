@@ -65,6 +65,7 @@ function query(filterBy = {}) {
             if (filterBy.type) {
                 notes = notes.filter(note => note.type === filterBy.type)
             }
+            console.log('entered query')
             return notes
         })
 }

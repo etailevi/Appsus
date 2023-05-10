@@ -17,6 +17,7 @@ export function NoteIndex() {
 
     function loadNotes() {
         noteService.query(filterBy).then(setNotes)
+        console.log('entered load notes')
     }
 
     function onRemoveNote(noteId) {
@@ -31,12 +32,12 @@ export function NoteIndex() {
     function onSetFilter(filterBy) {
         setFilterBy(prevFilterBy => ({ ...prevFilterBy, ...filterBy }))
     }
-    console.log(notes)
+   
     return (
         <section className="note-index full main-layout">
             <NoteFilter onSetFilter={onSetFilter} filterBy={filterBy} />
             <button><Link to="/book/note-add">Add Note</Link></button>
-            <NoteList note={notes} onRemoveNote={onRemoveNote} />
+            <NoteList notes={notes} onRemoveNote={onRemoveNote} />
         </section>
     )
 }
