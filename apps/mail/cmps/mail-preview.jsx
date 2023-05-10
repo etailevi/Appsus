@@ -9,7 +9,7 @@ export function MailPreview({ mail, onRemoveMail, onArchiveMail, onMarkRead, onS
     return (
         <article className="mail-preview">
             <hr />
-            <ul className="clean-list flex space-between align-center row">
+            <ul className="clean-list flex align-center row">
                 <li className="flex row">
                     <input type="checkbox" name="first-checkbox" id="" />
                     <img src="../../../assets/img/imgs-gmail/star.svg" alt="" />

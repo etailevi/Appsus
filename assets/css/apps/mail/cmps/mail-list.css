@@ -1,5 +1,16 @@
- /* mail list */
+.mail-list {
+    padding-inline-start: 0;
+}
 
- a img {
-     width: 30px;
- }
+.mail-list li {
+   
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    font-family: Roboto-medium;
+}
+
+.read {
+    background-color: #f2f6fc;
+    font-family: Roboto-light;
+}

@@ -12,7 +12,9 @@
     cursor: pointer;
 }
 
-.mail-preview-content {}
+.mail-preview-content {
+    flex-grow: 1;
+}
 
 .mail-sender-name {
     margin-inline-end: 100px;
