@@ -14,6 +14,7 @@ export function MailIndex() {
         loadMails()
     }, [filterBy])
 
+    console.log(mails)
     function loadMails() {
         mailService.query(filterBy).then(setMails)
     }
