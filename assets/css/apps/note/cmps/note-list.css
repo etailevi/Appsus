@@ -1,1 +1,23 @@
- /* note list */
+.columns {
+    column-count: 4;
+    column-width: 220px;
+    gap: 25px;
+    margin: 10px;
+}
+
+.note-item {
+    display: grid;
+    /* grid-template-columns: 2; */
+    /* grid-template-rows: 4; */
+    border: 1px solid darkgray;
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    padding: 15px;
+    background-color: rgb(255, 251, 235);
+    break-inside: avoid;
+    margin-block-end: 25px;
+}
+
+.note-item:first-of-type {
+    margin-block-start: 0;
+}

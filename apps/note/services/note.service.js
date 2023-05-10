@@ -23,7 +23,81 @@ const gNotes = [
             backgroundColor: '#00d'
         },
         info: {
+            title: 'Happy Day',
             txt: 'Fullstack Me Baby!'
+        }
+    },
+    {
+        id: 'n102',
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+            url: 'http://some-img/me',
+            title: 'Bobi and Me',
+            txt: utilService.makeLorem(20)
+        },
+        style: {
+            backgroundColor: '#00d'
+        }
+    },
+    {
+        id: 'n102',
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+            url: 'http://some-img/me',
+            title: 'Bobi and Me'
+        },
+        style: {
+            backgroundColor: '#00d'
+        }
+    },
+    {
+        id: 'n102',
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+            url: 'http://some-img/me',
+            title: 'Bobi and Me'
+        },
+        style: {
+            backgroundColor: '#00d'
+        }
+    },
+    {
+        id: 'n102',
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+            url: 'http://some-img/me',
+            title: 'Bobi and Me'
+        },
+        style: {
+            backgroundColor: '#00d'
+        }
+    },
+    {
+        id: 'n102',
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+            url: 'http://some-img/me',
+            title: 'Bobi and Me'
+        },
+        style: {
+            backgroundColor: '#00d'
+        }
+    },
+    {
+        id: 'n102',
+        type: 'NoteImg',
+        isPinned: false,
+        info: {
+            url: 'http://some-img/me',
+            title: 'Bobi and Me'
+        },
+        style: {
+            backgroundColor: '#00d'
         }
     },
     {
