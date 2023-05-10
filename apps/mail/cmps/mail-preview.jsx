@@ -2,7 +2,7 @@ import { utilService } from "../../../services/util.service.js"
 import { mailService } from "../services/mail.service.js"
 const { Link } = ReactRouterDOM
 
-export function MailPreview({ mail }) {
+export function MailPreview({ mail, onRemoveMail }) {
 
     const { subject, from, sentAt, name, id } = mail
     const mailText = mail.body.substring(0, 30)
@@ -16,7 +16,7 @@ export function MailPreview({ mail }) {
                 </li>
                 <li className="mail-preview-content">
                     <Link to={`/mail/${id}`} className="flex row">
-                        <li className="mail-sender-name"><h3>{name}</h3></li>
+                        <h3 className="mail-sender-name">{name}</h3>
                         <h3>{subject}</h3>
                         <h5>{mailText}</h5>
                     </Link>
@@ -30,6 +30,6 @@ export function MailPreview({ mail }) {
                     <img src="../../../assets/img/imgs-gmail/schedule.svg" alt="" />
                 </li>
             </ul>
-        </article>
+        </article >
     )
 }
