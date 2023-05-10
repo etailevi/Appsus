@@ -1,1 +1,34 @@
  /* home */
+
+.home ul {
+    gap: 2em;
+    text-align: center;
+    margin-block-start: 7em;
+}
+
+.home ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 250px;
+    height: 250px;
+    padding: .7em;
+    border: 1px solid rgba(49, 46, 46, 0.559);
+    background-color: rgb(228, 228, 228);
+    border-radius: 1em;
+    transition: .2s ease-in-out;
+}
+
+.home ul li:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.home ul li p {
+    font-size: .8em;
+    flex-grow: 1;
+}
+
+.home ul li img {
+    width: 80px;
+}
