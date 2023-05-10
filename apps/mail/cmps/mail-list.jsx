@@ -4,13 +4,11 @@ import { MailPreview } from "./mail-preview.jsx";
 
 export function MailList({ mails, onRemoveMail }) {
     return (
-        <ul className="mail-list clean-list">
+        <ul className="mail-list">
             {mails.map(mail =>
-                <li key={mail.id} className="flex column">
-                    <MailPreview mail={mail} />
+                <li key={mail.id}>
+                    <MailPreview mail={mail} onRemoveMail={onRemoveMail} />
                     <section>
-                        <button><Link to={`/mail/${mail.id}`} >Details</Link ></button>
-                        <button onClick={() => onRemoveMail(mail.id)} >Remove Mail</button>
                     </section>
                 </li>
             )}
