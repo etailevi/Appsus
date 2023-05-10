@@ -54,7 +54,7 @@ export function NoteIndex() {
                     </div>
                 </ul>}
             {visible && <NoteAdd />}
-            <NoteFilter DynmicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
+            <NoteFilter DynamicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
             <NoteList notes={notes} onRemoveNote={onRemoveNote} />
         </section >
     )
