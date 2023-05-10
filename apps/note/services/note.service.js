@@ -2,6 +2,16 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 
+export const noteService = {
+    query,
+    get,
+    remove,
+    save,
+    getDefaultFilter,
+    getNextNoteId,
+    getPreviousNoteId,
+}
+
 const NOTE_KEY = 'noteDB'
 const gNotes = [
     {
@@ -44,15 +54,6 @@ const gNotes = [
 
 _createNotes()
 
-export const noteService = {
-    query,
-    get,
-    remove,
-    save,
-    getDefaultFilter,
-    getNextNoteId,
-    getPreviousNoteId,
-}
 
 function query(filterBy = {}) {
     return storageService.query(NOTE_KEY)

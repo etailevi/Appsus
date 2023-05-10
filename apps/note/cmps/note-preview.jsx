@@ -9,7 +9,7 @@ import { NoteTodos } from "../cmps/note-todos.jsx"
 
 
 export function NotePreview() {
-
+    
 
 
 

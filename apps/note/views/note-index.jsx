@@ -1,23 +1,42 @@
+const { useEffect, useState } = React
+const { Link } = ReactRouterDOM
 
-import { NotePreview } from "../cmps/note-preview.jsx"
+import {NoteFilter} from "../cmps/note-filter.jsx"
+import { NoteList } from "../cmps/note-list.jsx"
+import { noteService } from "../services/note.service.js"
+import { showSuccessMsg } from "../../../services/event-bus.service.js"
 
 export function NoteIndex() {
 
+    const [notes, setNotes] = useState([])
+    const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
 
+    useEffect(() => {
+        loadNotes()
+    }, [filterBy])
+
+    function loadNotes() {
+        noteService.query(filterBy).then(setNotes)
+    }
+
+    function onRemoveNote(noteId) {
+        noteService.remove(noteId).then(() => {
+            const updatedNotes = notes.filter(note => note.id !== noteId)
+            setNotes(updatedNotes)
+            showSuccessMsg(`Note removed!`)
+
+        })
+    }
+
+    function onSetFilter(filterBy) {
+        setFilterBy(prevFilterBy => ({ ...prevFilterBy, ...filterBy }))
+    }
+    console.log(notes)
     return (
-        <section>
-            <form onSubmit={onAddNote}>
-                <label htmlFor="title"></label>
-                <input value={title} onChange={handleChange} name="title" id="title" type="text" placeholder="" />
-
-                <label htmlFor="maxPrice">Max Price:</label>
-                <input value={maxPrice} onChange={handleChange} type="number" name="maxPrice" id="maxPrice" placeholder="By Max Price" />
-
-                <button>Add Note</button>
-            </form>
-
-
-            <NotePreview />
+        <section className="note-index full main-layout">
+            <NoteFilter onSetFilter={onSetFilter} filterBy={filterBy} />
+            <button><Link to="/book/note-add">Add Note</Link></button>
+            <NoteList note={notes} onRemoveNote={onRemoveNote} />
         </section>
     )
 }
