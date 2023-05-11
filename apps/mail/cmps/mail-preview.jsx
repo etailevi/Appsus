@@ -25,10 +25,10 @@ export function MailPreview({ mail, onRemoveMail, onArchiveMail, onMarkRead, onS
                 <li className="flex row">
                     <h3 className="date-recieved">{utilService.intToFormat(sentAt)}</h3>
                     {/* Add that buttons will be shown only once mail is hovered */}
-                    <img onClick={() => onArchiveMail(mail)} src="./assets/img/imgs-gmail/archive-mail.svg" alt="" />
-                    <img onClick={() => onRemoveMail(mail.id)} src="./assets/img/imgs-gmail/delete-mail.svg" alt="" />
-                    <img onClick={() => onMarkRead(mail)} src="./assets/img/imgs-gmail/mark-as-read.svg" alt="" />
-                    <img onClick={() => onScheduleMail(mail)} src="./assets/img/imgs-gmail/schedule.svg" alt="" />
+                    <img onClick={() => onArchiveMail(mail)} src="./assets/img/imgs-gmail/archive-mail.svg" alt="archive mail" />
+                    <img onClick={() => onRemoveMail(mail.id)} src="./assets/img/imgs-gmail/delete-mail.svg" alt="delete mail" />
+                    <img onClick={() => onMarkRead(mail)} src="./assets/img/imgs-gmail/mark-as-read.svg" alt="mark mail as read" />
+                    <img onClick={() => onScheduleMail(mail)} src="./assets/img/imgs-gmail/schedule.svg" alt="schedule mail" />
                 </li>
             </ul>
         </article >
