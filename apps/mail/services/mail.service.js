@@ -12,7 +12,7 @@ export const mailService = {
     remove,
     save,
     getDefaultFilter,
-    // getEmptyMail,
+    getEmptyMail,
     getNextMailId,
     getPreviousMailId,
 }
@@ -213,4 +213,8 @@ function getRandomDate() {
     const randomTimestamp = Math.floor(Math.random() * (maxDate - minDate + 1)) + minDate
 
     return randomTimestamp
+}
+
+function getEmptyMail() {
+
 }
