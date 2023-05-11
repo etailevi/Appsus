@@ -10,8 +10,8 @@ export function NoteList({ notes, onRemoveNote }) {
                 <li key={note.id} className="note-item">
                     <section>
                     <NotePreview note={note} />
-                        <h2>{note.info.title}</h2>
-                        <h1>{note.info.txt}</h1>
+                        <h1>{note.info.title}</h1>
+                        <p>{note.info.txt}</p>
                         <button onClick={() => onRemoveNote(note.id)} >Remove Note</button>
                         <button><Link to={`/note/${note.id}`} >Details</Link ></button>
                         <button><Link to={`/note/edit/${note.id}`} >Edit</Link></button>
