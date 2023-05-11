@@ -9,20 +9,21 @@ import { NoteTodos } from "../cmps/note-todos.jsx"
 import { ColorInput } from "./dynamic-inputs/color-input.jsx"
 
 
-export function NotePreview({ note }) {
+export function NotePreview({ note, onRemoveNote }) {
     const [cmpType, setCmpType] = useState('color')
-    const [noteStyle, setNoteStyle] = useState({ backgroundColor: 'gray', })
+    const [noteStyle, setNoteStyle] = useState({ backgroundColor: 'pink', })
 
     function onSetNoteStyle(newStyle) {
         setNoteStyle((prevStyle) => ({ ...prevStyle, ...newStyle }))
     }
 
     return (
-        <section>
-            <article style={noteStyle} className="note-card">
+        <section style={noteStyle} className="note-container">
+            <article className="note-card">
+            <button className="note-pin" onClick={() => onRemoveNote(note.id)} ><img src="./assets/img/imgs-notes/pin.svg" alt="Pin Note" /></button>
                 {!!note.info && <h1>{note.info.title}</h1>}
                 {!!note.info && <p>{note.info.txt}</p>}
-                <button onClick={() => onRemoveNote(note.id)} ><img src="./assets/img/imgs-notes/trash.svg" alt="Trash" /></button>
+                <button className="note-trash" onClick={() => onRemoveNote(note.id)} ><img src="./assets/img/imgs-notes/trash.svg" alt="Trash" /></button>
             </article>
             <NoteTxt />
             <NoteImg />
