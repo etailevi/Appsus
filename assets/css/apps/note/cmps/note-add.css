@@ -1,0 +1,27 @@
+.note-add-input {
+    width: 380px;
+    margin: auto;
+    margin-block: 35px;
+    height: 150px;
+    font-size: 1.2em;
+    border-radius: 1.2em;
+    background-color: white;
+    border: 1px solid gray;
+    padding: 0;
+}
+
+.note-add-input input {
+    border: none;
+    border-block-end: 1px solid gray;
+}
+
+.note-add-input input:last-of-type {
+    flex: 1;
+}
+
+.input-title input{
+    font-size: 1.1em;
+    padding-inline-start: 0.6em;
+    padding-block: 0.4em;
+    background-color: transparent;
+}
