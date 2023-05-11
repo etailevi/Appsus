@@ -2,18 +2,19 @@ import { utilService } from "../../../services/util.service.js"
 import { mailService } from "../services/mail.service.js"
 const { Link } = ReactRouterDOM
 
-export function MailPreview({ mail, onRemoveMail, onArchiveMail, onMarkRead, onScheduleMail }) {
+export function MailPreview({ mail, onRemoveMail, onArchiveMail, onMarkRead, onScheduleMail, onStarMail, onImportantMail }) {
 
     const { subject, from, sentAt, name, id } = mail
-    const mailText = mail.body.substring(0, 30)
+    const mailText = mail.body ? mail.body.substring(0, 30) : ''
+    console.log('mail from preview', mail)
     return (
         <article className="mail-preview">
             <hr />
             <ul className="clean-list flex align-center row">
                 <li className="flex row">
                     <input type="checkbox" name="first-checkbox" id="" />
-                    <img src="./assets/img/imgs-gmail/star.svg" alt="" />
-                    <img src="./assets/img/imgs-gmail/label-important.svg" alt="" />
+                    <img onClick={() => onStarMail(mail)} src="./assets/img/imgs-gmail/star.svg" alt="" />
+                    <img onClick={() => onImportantMail(mail)} src="./assets/img/imgs-gmail/label-important.svg" alt="" />
                 </li>
                 <li className="mail-preview-content">
                     <Link to={`/mail/${id}`} className="flex row align-center">

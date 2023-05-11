@@ -2,7 +2,8 @@ const { Link } = ReactRouterDOM
 
 import { MailPreview } from "./mail-preview.jsx";
 
-export function MailList({ mails, onRemoveMail }) {
+export function MailList({ mails, onRemoveMail, onRemoveMailFinal, onStarMail, onImportantMail }) {
+
     function onMarkRead(mail) {
         mail.isRead = true
         mailService.save(mail).then(setMails)
@@ -19,7 +20,7 @@ export function MailList({ mails, onRemoveMail }) {
             <ul className="clean-list">
                 {mails.map(mail =>
                     <li key={mail.id}>
-                        <MailPreview mail={mail} onRemoveMail={onRemoveMail} />
+                        <MailPreview mail={mail} onImportantMail={onImportantMail} onStarMail={onStarMail} onRemoveMail={mail.isRemoved ? onRemoveMailFinal : onRemoveMail} />
                         <section>
                         </section>
                     </li>

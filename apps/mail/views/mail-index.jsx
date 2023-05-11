@@ -30,13 +30,30 @@ export function MailIndex() {
             showSuccessMsg(`Mail archived!`)
         })
     }
+    function onStarMail(mail) {
+        mail.isStared = true
+        mailService.save(mail).then(loadMails)
+    }
 
+    function onImportantMail(mail) {
+        mail.isImportant = true
+        mailService.save(mail).then(loadMails)
+    }
     function onRemoveMail(mailId) {
-        mailService.remove(mailId).then(() => {
-            const updatedMails = mails.filter(mail => mail.id !== mailId)
-            setMails(updatedMails)
-            showSuccessMsg(`Mail has been removed!`)
-        })
+        mailService.get(mailId)
+            .then((mail) => {
+                mail.isRemoved = true;
+                return mail
+            })
+            .then((mail) => {
+                return mailService.save(mail)
+            })
+            .then(() => {
+                const updatedMails = mails.filter((mail) => mail.id !== mailId);
+                setMails(updatedMails)
+                showSuccessMsg(`Mail has been sent to the trash bin!`);
+            })
+            .catch((err) => console.error(err));
     }
 
 
@@ -55,8 +72,12 @@ export function MailIndex() {
     if (!mails) return <div>Loading...</div>
     return (
         <section>
+            <button><Link to={`/mail/trash`} >Trash</Link ></button>
+            <button><Link to={`/mail/starred-mails`} >Starred</Link ></button>
+            <button><Link to={`/mail/important`} >Important</Link ></button>
+            {/* <button><Link to={`/mail/sent`} >Sent</Link ></button> */}
             <MailFilter onSetFilter={onSetFilter} filterBy={filterBy} />
-            <MailList mails={mails} onRemoveMail={onRemoveMail} />
+            <MailList mails={mails} onRemoveMail={onRemoveMail} onStarMail={onStarMail} onImportantMail={onImportantMail} />
             {!isComposeOpen && <button onClick={toggleCompose}>Compose</button>}
             {isComposeOpen && <MailCompose onMailSent={onMailSent} />}
         </section>
