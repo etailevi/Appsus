@@ -16,12 +16,12 @@ export const noteService = {
 const NOTE_KEY = 'noteDB'
 const gNotes = [
     {
-        id: 'n101',
+        id: utilService.makeId(),
         createdAt: 1112222,
         type: 'NoteTxt',
         isPinned: true,
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: 'yellow'
         },
         info: {
             title: 'Happy Day',
@@ -29,7 +29,7 @@ const gNotes = [
         }
     },
     {
-        id: 'n102',
+        id: utilService.makeId(),
         type: 'NoteImg',
         isPinned: false,
         info: {
@@ -42,12 +42,12 @@ const gNotes = [
         }
     },
     {
-        id: 'n102',
+        id: utilService.makeId(),
         type: 'NoteImg',
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me',
+            title: 'Get a haircut',
             txt: utilService.makeLorem(10)
         },
         style: {
@@ -55,12 +55,12 @@ const gNotes = [
         }
     },
     {
-        id: 'n102',
+        id: utilService.makeId(),
         type: 'NoteImg',
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me',
+            title: 'Buy some new T-shirts',
             txt: utilService.makeLorem(19)
         },
         style: {
@@ -68,12 +68,12 @@ const gNotes = [
         }
     },
     {
-        id: 'n102',
+        id: utilService.makeId(),
         type: 'NoteImg',
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me',
+            title: 'Survive sprint 3',
             txt: utilService.makeLorem(13)
         },
         style: {
@@ -81,12 +81,12 @@ const gNotes = [
         }
     },
     {
-        id: 'n102',
+        id: utilService.makeId(),
         type: 'NoteImg',
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me',
+            title: 'Get married',
             txt: utilService.makeLorem(20)
         },
         style: {
@@ -94,12 +94,12 @@ const gNotes = [
         }
     },
     {
-        id: 'n102',
+        id: utilService.makeId(),
         type: 'NoteImg',
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me',
+            title: 'Eat lunch with my sister',
             txt: utilService.makeLorem(20)
         },
         style: {
@@ -107,12 +107,12 @@ const gNotes = [
         }
     },
     {
-        id: 'n102',
+        id: utilService.makeId(),
         type: 'NoteImg',
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me',
+            title: 'Travel to Paris',
             txt: utilService.makeLorem(8)
         },
         style: {
@@ -120,7 +120,7 @@ const gNotes = [
         }
     },
     {
-        id: 'n103',
+        id: utilService.makeId(),
         type: 'NoteTodos',
         isPinned: false,
         info: {

@@ -12,7 +12,7 @@ export function NoteList({ notes, onRemoveNote }) {
                     <NotePreview note={note} />
                         <h1>{note.info.title}</h1>
                         <p>{note.info.txt}</p>
-                        <button onClick={() => onRemoveNote(note.id)} >Remove Note</button>
+                        <button onClick={() => onRemoveNote(note.id)} ><img src="./assets/img/imgs-notes/trash.svg" alt="Trash" /></button>
                         <button><Link to={`/note/${note.id}`} >Details</Link ></button>
                         <button><Link to={`/note/edit/${note.id}`} >Edit</Link></button>
                     </section>
