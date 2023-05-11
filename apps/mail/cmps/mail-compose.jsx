@@ -8,6 +8,10 @@ export function MailCompose({ onMailSent }) {
     const [mailToAdd, setMailToAdd] = useState(mailService.getEmptyMail())
     const [isOn, setIsOn] = useState(true)
 
+    useEffect(() => {
+        setIsOn(true)
+    }, [])
+
 
     function handleChange({ target }) {
         const field = target.name
@@ -19,16 +23,15 @@ export function MailCompose({ onMailSent }) {
         ev.preventDefault()
         setMailToAdd(mail => ({ ...mail, sentAt: Date.now() }))
         mailService.save(mailToAdd).then(() => {
-            setIsOn(false)
-            props.onMailSent()
             showSuccessMsg('Mail has been successfully sent')
+            onMailSent()
         })
     }
 
     const { from, to, subject, body } = mailToAdd
 
     return (
-        isOn && <section className="mail-compose">
+        !!isOn && <section className="mail-compose">
             <h4>New Message</h4><button onClick={() => setIsOn(false)}>X</button>
             <form onSubmit={onSaveMail}><h5 className="mail-compose-msg">From</h5><input required onChange={handleChange} value={from} type="email" name="from" id="" placeholder="Your-Mail" />
                 <input required onChange={handleChange} value={to} type="email" name="to" id="" placeholder="To" />

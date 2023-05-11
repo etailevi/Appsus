@@ -41,7 +41,7 @@ export function MailIndex() {
 
 
     function onSetFilter(filterBy) {
-        setFilterBy(prevFilterBy => ({ ...prevFilterBy, ...filterBy }))
+        setFilterBy(filterBy)
     }
 
     function toggleCompose() {
@@ -49,13 +49,13 @@ export function MailIndex() {
     }
 
     function onMailSent() {
-        setIsComposeOpen(false);
+        setIsComposeOpen(!isComposeOpen);
         loadMails()
     }
-
+    if (!mails) return <div>Loading...</div>
     return (
         <section>
-            {/* <MailFilter onSetFilter={onSetFilter} filterBy={filterBy} /> */}
+            <MailFilter onSetFilter={onSetFilter} filterBy={filterBy} />
             <MailList mails={mails} onRemoveMail={onRemoveMail} />
             {!isComposeOpen && <button onClick={toggleCompose}>Compose</button>}
             {isComposeOpen && <MailCompose onMailSent={onMailSent} />}
