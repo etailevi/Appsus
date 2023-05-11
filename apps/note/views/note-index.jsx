@@ -10,12 +10,12 @@ import { showSuccessMsg } from "../../../services/event-bus.service.js"
 export function NoteIndex() {
 
     const [notes, setNotes] = useState([])
-    const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(true)
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
 
     useEffect(() => {
         loadNotes()
-    }, [filterBy, visible])
+    }, [filterBy, visible, notes])
 
     function loadNotes() {
         noteService.query(filterBy).then(setNotes)
@@ -46,13 +46,15 @@ export function NoteIndex() {
                             <input type="text" name="" id="" placeholder="Add a new note here..." />
                         </li>
                         <li className="add-note-opts flex row align-center">
-                            <button><img src="../../../assets/img/imgs-notes/input-check.svg" alt="input-check" /></button>
-                            <button><img src="../../../assets/img/imgs-notes/input-brush.svg" alt="input-brush" /></button>
-                            <button><img src="../../../assets/img/imgs-notes/input-image.svg" alt="input-image" /></button>
+                            <button><img src="./assets/img/imgs-notes/input-check.svg" alt="input-check" /></button>
+                            <button><img src="./assets/img/imgs-notes/input-brush.svg" alt="input-brush" /></button>
+                            <button><img src="./assets/img/imgs-notes/input-image.svg" alt="input-image" /></button>
                         </li>
                     </div>
                 </ul>}
-            {visible && <NoteAdd />}
+            {visible && 
+            <NoteAdd />
+            }
             <NoteFilter DynamicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
             <NoteList notes={notes} onRemoveNote={onRemoveNote} />
         </section >

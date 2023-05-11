@@ -54,14 +54,14 @@ export function NoteAdd() {
             <label htmlFor="title"></label>
             <input value={title} onChange={handleChange} name="title" id="title" type="text" placeholder="Title" />
             <input required value={txt} onChange={handleChange} name="txt" id="text" type="text" placeholder={placeholder} />
-            <img src="../../../assets/img/imgs-notes/reminder.svg" alt="" />
-            <img src="../../../assets/img/imgs-notes/add-user.svg" alt="" />
-            <img onClick={() => toggleColorPalette()} src="../../../assets/img/imgs-notes/color-palette.svg" alt="" />
+            <img src="./assets/img/imgs-notes/reminder.svg" alt="" />
+            <img src="./assets/img/imgs-notes/add-user.svg" alt="" />
+            <img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" />
             {!!colorPaletteVisible && <ColorPalette onSetNoteStyle={onSetNoteStyle} />}
-            <img src="../../../assets/img/imgs-notes/input-image.svg" alt="" />
-            <img src="../../../assets/img/imgs-notes/archive.svg" alt="" />
-            <img src="../../../assets/img/imgs-notes/three-dots.svg" alt="" />
-            <img onClick={() => onDeleteText()} src="../../../assets/img/imgs-notes/back.svg" alt="" />
+            <img src="./assets/img/imgs-notes/input-image.svg" alt="" />
+            <img src="./assets/img/imgs-notes/archive.svg" alt="" />
+            <img src="./assets/img/imgs-notes/three-dots.svg" alt="" />
+            <img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" />
             <button>Add</button>
         </form>
     )
