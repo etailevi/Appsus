@@ -5,12 +5,31 @@
 
 .note-card {
     padding: 15px;
+    padding-block-end: 30px;
 }
 
-.note-trash {
+.note-pin, .note-card li {
     border: none;
     background-color: transparent;
     position: absolute;
+}
+
+.note-card li button {
+    border: none;
+    background-color: transparent;
+}
+
+.note-pin:hover, .note-card li button:hover {
+    opacity: .6;
+    scale: 1.1;
+}
+
+.note-card li {
     right: 5px;
     bottom: 5px;
+}
+
+.note-pin {
+    left: 5px;
+    top: 15px;
 }

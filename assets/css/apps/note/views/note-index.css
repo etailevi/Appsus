@@ -16,8 +16,8 @@
 .add-note-bar input {
     margin: auto;
     margin-block: 35px;
-    height: 30px;
-    width: 350px;
+    height: 40px;
+    width: 380px;
     font-size: 1.2em;
     border-radius: 2em;
     background-color: white;
@@ -40,7 +40,7 @@
     padding-inline: 3px;
     background-color: transparent;
     color: black;
-    height: 25px;
+    height: 35px;
     cursor: pointer;
     transition: .2s ease-in-out;
 }
