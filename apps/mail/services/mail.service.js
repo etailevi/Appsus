@@ -216,5 +216,15 @@ function getRandomDate() {
 }
 
 function getEmptyMail() {
-
+    return {
+        id: '',
+        from: '',
+        to: '',
+        isRead: false,
+        removeAt: null,
+        isArchive: false,
+        isSchedule: false,
+        subject: '',
+        body: ''
+    }
 }
