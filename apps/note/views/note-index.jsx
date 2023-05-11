@@ -6,11 +6,13 @@ import { NoteAdd } from "../cmps/note-add.jsx"
 import { NoteList } from "../cmps/note-list.jsx"
 import { noteService } from "../services/note.service.js"
 import { showSuccessMsg } from "../../../services/event-bus.service.js"
+import { ThreeDots } from "../cmps/note-three-dots.jsx"
 
 export function NoteIndex() {
 
     const [notes, setNotes] = useState([])
-    const [visible, setVisible] = useState(true)
+    const [visible, setVisible] = useState(false)
+    const [clicked, setClicked] = useState(false)
     const inputRef = useRef(null);
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
 
@@ -54,18 +56,18 @@ export function NoteIndex() {
                 <ul onClick={() => onChangeVisible()} className="note-input clean-list flex align-center justify-center" >
                     <div class="add-note-bar">
                         <li>
-                            <input ref={inputRef} type="text" name="" id="" placeholder="Add a new note here..." />
+                            <input ref={inputRef} type="text" name="" id="" placeholder="What's on your mind..." />
                         </li>
                         <li className="add-note-opts flex row align-center">
-                            <button><img src="./assets/img/imgs-notes/input-check.svg" alt="input-check" /></button>
-                            <button><img src="./assets/img/imgs-notes/input-brush.svg" alt="input-brush" /></button>
+                            <button><img src="./assets/img/imgs-notes/phrase.svg" alt="text-input" /></button>
                             <button><img src="./assets/img/imgs-notes/input-image.svg" alt="input-image" /></button>
+                            <button><img src="./assets/img/imgs-notes/youtube.svg" alt="youtube-input" /></button>
+                            {!clicked && <button><img src="./assets/img/imgs-notes/three-dots.svg" alt="three-dots" /></button>}
+                            {!!clicked && <ThreeDots />}
                         </li>
                     </div>
                 </ul>}
-            {visible &&
-                <NoteAdd />
-            }
+            {visible && <NoteAdd />}
             <NoteFilter DynamicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
             <NoteList notes={notes} onRemoveNote={onRemoveNote} />
         </section >
