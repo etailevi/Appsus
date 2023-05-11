@@ -17,7 +17,7 @@
     margin: auto;
     margin-block: 35px;
     height: 40px;
-    width: 380px;
+    width: 450px;
     font-size: 1.2em;
     border-radius: 2em;
     background-color: white;
@@ -47,6 +47,6 @@
 }
 
 .add-note-bar button:hover {
-    background-color: orange;
+    background-color: rgb(220, 213, 200);
     border-radius: 2em;
 }

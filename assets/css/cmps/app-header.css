@@ -29,6 +29,6 @@ nav a:active {
 }
 
 .app-header a img:hover {
-    background-color: white;
+    background-color: rgb(220, 213, 200);
     border-radius: 50%;
 }

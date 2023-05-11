@@ -135,7 +135,6 @@ const gNotes = [
 
 _createNotes()
 
-
 function query(filterBy = {}) {
     return storageService.query(NOTE_KEY)
         .then(notes => {

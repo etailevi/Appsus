@@ -5,7 +5,7 @@ import { noteService } from "../services/note.service.js"
 import { showSuccessMsg } from "../../../services/event-bus.service.js"
 import { utilService } from "../services/util.service.js"
 
-export function NoteAdd() {
+export function NoteAdd({ loadNotes }) {
     const [noteToAdd, setNoteToAdd] = useState(noteService.getEmptyNote())
     const [placeholder, setPlaceholder] = useState("Enter your note here..");
     const [cmpType, setCmpType] = useState('color')
@@ -19,8 +19,8 @@ export function NoteAdd() {
     }
 
     useEffect(() => {
-        // Your effect code here
-    }, [noteToAdd]);
+        // loadNotes()
+    }, [noteToAdd])
 
     function handleChange({ target }) {
         const field = target.name
@@ -34,12 +34,12 @@ export function NoteAdd() {
 
     function onAddNote(ev) {
         ev.preventDefault()
-        noteService.save(noteToAdd).then(() => showSuccessMsg(`Added new note`))
+        noteService.save(noteToAdd).then(() => showSuccessMsg(`New note added!`))
     }
 
     function onDeleteText() {
         setNoteToAdd(note => ({ ...note, info: { ...note.info, txt: '' } }))
-        setPlaceholder("Enter your note here..")
+        setPlaceholder("Enter your note here...")
     }
 
     function toggleColorPalette() {
@@ -51,21 +51,21 @@ export function NoteAdd() {
     const { title, txt } = noteToAdd
     return (
         <ul className="note-add-input clean-list">
-        <form onSubmit={onAddNote} >
-            <li className="input-title flex column">
-            <label htmlFor="title"></label>
-            <input value={title} onChange={handleChange} name="title" id="title" type="text" placeholder="Title" />
-            <textarea required value={txt} onChange={handleChange} name="txt" id="text" type="text" placeholder={placeholder} rows="3"></textarea>
-            </li>
-            <li className="input-btns flex row align-center justify-center space-between">
-            <img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" />
-            {!!colorPaletteVisible && <ColorPalette onSetNoteStyle={onSetNoteStyle} />}
-            <img src="./assets/img/imgs-notes/input-image.svg" alt="" />
-            <img src="./assets/img/imgs-notes/archive.svg" alt="" />
-            <img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" />
-            <button className="btn-save-note"><img src="./assets/img/imgs-notes/bookmark.svg" alt="" /></button>
-            </li>
-        </form>
+            <form onSubmit={onAddNote}>
+                <li className="input-title flex column">
+                    <label htmlFor="title"></label>
+                    <input value={title} onChange={handleChange} name="title" id="title" type="text" placeholder="Title" />
+                    <textarea required value={txt} onChange={handleChange} name="txt" id="text" type="text" placeholder={placeholder} rows="3"></textarea>
+                </li>
+                <li className="input-btns flex row align-center justify-center space-between">
+                    <button><img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" />
+                        {!!colorPaletteVisible && <ColorPalette onSetNoteStyle={onSetNoteStyle} />}</button>
+                    <button><img src="./assets/img/imgs-notes/input-image.svg" alt="" /></button>
+                    <button><img src="./assets/img/imgs-notes/archive.svg" alt="" /></button>
+                    <button><img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" /></button>
+                    <button><img src="./assets/img/imgs-notes/bookmark.svg" alt="" /></button>
+                </li>
+            </form>
         </ul>
     )
 }

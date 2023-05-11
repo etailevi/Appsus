@@ -1,5 +1,5 @@
 .note-add-input {
-    width: 380px;
+    width: 450px;
     margin: auto;
     margin-block: 35px;
     height: 150px;
@@ -9,6 +9,7 @@
     border: none;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
     padding: 0;
+    padding-block-end: 35px;
     position: relative;
 }
 
@@ -52,16 +53,17 @@ textarea {
     position: absolute;
     bottom: 8px;
     left: 15px;
-    width: 350px;
+    width: 420px;
 }
 
-.note-add-input .input-btns img {
+.note-add-input .input-btns button {
+    background-color: transparent;
+    height: 40px;
+    border: none;
     cursor: pointer;
 }
 
-.btn-save-note {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    height: 25px;
+.note-add-input .input-btns button:hover {
+    background-color: rgb(220, 213, 200);
+    border-radius: 2em;
 }
