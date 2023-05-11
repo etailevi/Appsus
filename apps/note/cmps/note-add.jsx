@@ -5,7 +5,7 @@ import { noteService } from "../services/note.service.js"
 import { showSuccessMsg } from "../../../services/event-bus.service.js"
 import { utilService } from "../services/util.service.js"
 
-export function NoteAdd({ loadNotes }) {
+export function NoteAdd({ onAddNote }) {
     const [noteToAdd, setNoteToAdd] = useState(noteService.getEmptyNote())
     const [placeholder, setPlaceholder] = useState("Enter your note here..");
     const [cmpType, setCmpType] = useState('color')
@@ -19,8 +19,8 @@ export function NoteAdd({ loadNotes }) {
     }
 
     useEffect(() => {
-        // loadNotes()
-    }, [noteToAdd])
+
+    }, [])
 
     function handleChange({ target }) {
         const field = target.name
@@ -32,11 +32,6 @@ export function NoteAdd({ loadNotes }) {
         }
     }
 
-    function onAddNote(ev) {
-        ev.preventDefault()
-        noteService.save(noteToAdd).then(() => showSuccessMsg(`New note added!`))
-    }
-
     function onDeleteText() {
         setNoteToAdd(note => ({ ...note, info: { ...note.info, txt: '' } }))
         setPlaceholder("Enter your note here...")
@@ -46,12 +41,20 @@ export function NoteAdd({ loadNotes }) {
         setColorPaletteVisible((prevVisible) => !prevVisible);
     }
 
+    function onSaveNote(ev) {
+        ev.preventDefault()
+        noteService.save(noteToAdd).then(() => {
+            onAddNote()
+
+        })
+    }
+
     function onColorSelect(color) { }
 
     const { title, txt } = noteToAdd
     return (
         <ul className="note-add-input clean-list">
-            <form onSubmit={onAddNote}>
+            <form onSubmit={onSaveNote}>
                 <li className="input-title flex column">
                     <label htmlFor="title"></label>
                     <input value={title} onChange={handleChange} name="title" id="title" type="text" placeholder="Title" />

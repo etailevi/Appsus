@@ -42,6 +42,12 @@ export function NoteIndex() {
         })
     }
 
+    function onAddNote() {
+        onChangeVisible()
+        loadNotes()
+        showSuccessMsg(`Note has been added`)
+    }
+
     function onSetFilter(filterBy) {
         setFilterBy(prevFilterBy => ({ ...prevFilterBy, ...filterBy }))
     }
@@ -69,7 +75,7 @@ export function NoteIndex() {
                 </ul>
             }
             {visible &&
-                <NoteAdd  loadNotes={loadNotes} />
+                <NoteAdd onAddNote={onAddNote} />
             }
             <NoteFilter DynamicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
             <NoteList notes={notes} onRemoveNote={onRemoveNote} />
