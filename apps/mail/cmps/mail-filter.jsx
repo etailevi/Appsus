@@ -29,8 +29,8 @@ export function MailFilter({ onSetFilter, filterBy }) {
 
     return (
         <form className="mail-filter" onSubmit={onSubmitFilter}>
-            <input onChange={onFilterChange} type="search" name="search" id="" label="Search" value={body} />
-            <button>Search</button>
+            <input onChange={onFilterChange} type="search" name="search" id="" label="Search" value={body} placeholder="Search" />
+            <button className="btn-search" id="search"><img src="./assets/img/imgs-gmail/search.svg" alt="" /></button>
         </form>
     )
 }

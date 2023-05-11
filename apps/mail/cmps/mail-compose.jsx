@@ -33,7 +33,8 @@ export function MailCompose({ onMailSent }) {
     return (
         !!isOn && <section className="mail-compose">
             <h4>New Message</h4><button onClick={() => setIsOn(false)}>X</button>
-            <form onSubmit={onSaveMail}><h5 className="mail-compose-msg">From</h5><input required onChange={handleChange} value={from} type="email" name="from" id="" placeholder="Your-Mail" />
+            <form onSubmit={onSaveMail}><h5 className="mail-compose-msg">From</h5>
+                <input required onChange={handleChange} value={from} type="email" name="from" id="" placeholder="Your-Mail" />
                 <input required onChange={handleChange} value={to} type="email" name="to" id="" placeholder="To" />
                 <input required onChange={handleChange} value={subject} type="text" name="subject" id="" placeholder="Subject" />
                 <textarea value={body} onChange={handleChange} name="body" id="" cols="30" rows="10"></textarea>

@@ -1,0 +1,79 @@
+/* .mail-filter input {
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 2em;
+    font-size: 1.5em;
+    padding-inline: 0.6em;
+    height: 40px;
+    position: relative;
+}
+
+.mail-filter input:focus {
+    outline: none;
+}
+
+.mail-filter .btn-search {
+    position: absolute;
+    right: -15px;
+    border: 1px solid gray;
+    border-radius: 0 2em 2em 0;
+    background-color: rgb(214, 213, 212);
+    color: black;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+.mail-filter .btn-search:hover {
+    background-color: rgb(227, 22, 4);
+    color: white;
+} */
+
+.mail-filter {
+    padding: 0;
+    margin: auto;
+    position: relative;
+    width: 450px;
+} 
+
+.mail-filter input {
+    margin: auto;
+    margin-block: 35px;
+    height: 40px;
+    width: 450px;
+    font-size: 1.2em;
+    border-radius: 2em;
+    background-color: white;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
+    padding-inline-start: 0.6em;
+    padding-inline-end: 2em;
+}
+
+.mail-filter input:focus {
+    outline: none;
+}
+
+.mail-filter .btn-search {
+    position: absolute;
+    bottom: 35px;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border-radius: 0 2em 2em 0;
+    border-color: transparent;
+    border-inline-start: 1px solid rgba(198, 193, 193, 0.6);
+    cursor: pointer;
+}
+
+.mail-filter .btn-search:hover {
+    background-color: rgb(220, 213, 200);
+    /* border-radius: 2em; */
+}
+
+.mail-filter .btn-search img {
+    height: 26px;
+}
+
