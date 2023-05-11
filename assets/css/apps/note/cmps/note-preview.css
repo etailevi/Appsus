@@ -7,10 +7,18 @@
     padding: 15px;
 }
 
-.note-trash {
+.note-pin, .note-trash {
     border: none;
     background-color: transparent;
     position: absolute;
+}
+
+.note-trash {
     right: 5px;
     bottom: 5px;
+}
+
+.note-pin {
+    left: 5px;
+    top: 15px;
 }

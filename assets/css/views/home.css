@@ -4,6 +4,7 @@
     gap: 2em;
     text-align: center;
     margin-block-start: 7em;
+    padding-inline-start: 0;
 }
 
 .home ul li {
@@ -14,8 +15,8 @@
     width: 250px;
     height: 250px;
     padding: .7em;
-    border: 1px solid rgba(49, 46, 46, 0.559);
-    background-color: rgb(228, 228, 228);
+    border: 1px solid rgba(179, 177, 177, 0.559);
+    background-color: rgb(244, 241, 241);
     border-radius: 1em;
     transition: .2s ease-in-out;
 }
@@ -25,10 +26,42 @@
 }
 
 .home ul li p {
-    font-size: .8em;
+    font-size: .9em;
+    font-family: Roboto-Regular;
     flex-grow: 1;
 }
 
 .home ul li img {
     width: 80px;
 }
+
+.home button {
+  background: linear-gradient(to bottom right, orange, #FF9A5A);
+  border: 0;
+  border-radius: 12px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 2.5;
+  outline: transparent;
+  padding: 0 1rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow .2s ease-in-out;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+}
+
+.home button:not([disabled]):focus {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.home button:not([disabled]):hover {
+  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
