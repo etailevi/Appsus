@@ -122,10 +122,15 @@ _createMails()
 function query(filterBy = {}) {
     return storageService.query(MAIL_KEY)
         .then(mails => {
-            if (filterBy.txt) {
-                const regExp = new RegExp(filterBy.txt, 'i')
-                mails = mails.filter(mail => regExp.test(mail.txt))
+            if (filterBy.subject) {
+                const regExp = new RegExp(filterBy.subject, 'i')
+                mails = mails.filter(mail => regExp.test(mail.subject))
             }
+            if (filterBy.body) {
+                const regExp = new RegExp(filterBy.body, 'i')
+                mails = mails.filter(mail => regExp.test(mail.body))
+            }
+
             if (filterBy.status) {
                 mails = mails.filter(mail => mail.status === filterBy.status)
             }
@@ -159,9 +164,10 @@ function save(mail) {
 }
 
 function getDefaultFilter() {
-    return { txt: '', status: '', isRead: '', isStared: '', labels: '', isArchive: '', isSchedule: '' }
+    return { subject: '', body: '' }
 }
 
+// status: '', isRead: '', isStared: '', labels: '', isArchive: '', isSchedule: ''
 function getNextMailId(mailId) {
     return storageService.query(MAIL_KEY)
         .then((mails) => {
@@ -198,20 +204,10 @@ function _makeId(length = 3) {
     return txt
 }
 
-console.log(getRandomDate())
-
-// function getRandomDate() {
-//     const maxDate = Date.now();
-//     return Math.floor(Math.random() * maxDate);
-// }
-
-
 function getRandomDate() {
     const minDate = new Date('2014-01-01').getTime()
     const maxDate = Date.now()
-
     const randomTimestamp = Math.floor(Math.random() * (maxDate - minDate + 1)) + minDate
-
     return randomTimestamp
 }
 
@@ -222,6 +218,7 @@ function getEmptyMail() {
         to: '',
         isRead: false,
         removeAt: null,
+        sentAt: '',
         isArchive: false,
         isSchedule: false,
         subject: '',
