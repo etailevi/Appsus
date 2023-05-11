@@ -19,9 +19,9 @@ export function NotePreview({ note }) {
 
     return (
         <section>
-            <article style={noteStyle}>
-                {!!note.info && <h2>{note.info.title}</h2>}
-                {!!note.info && <h3>{note.info.txt}</h3>}
+            <article style={noteStyle} className="note-card">
+                {!!note.info && <h1>{note.info.title}</h1>}
+                {!!note.info && <p>{note.info.txt}</p>}
             </article>
             <NoteTxt />
             <NoteImg />
