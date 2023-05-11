@@ -21,7 +21,8 @@
     font-size: 1.2em;
     border-radius: 2em;
     background-color: white;
-    border: 1px solid gray;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
     padding-inline-start: 0.6em;
 }
 

@@ -55,15 +55,15 @@ export function NoteAdd() {
             <li className="input-title flex column">
             <label htmlFor="title"></label>
             <input value={title} onChange={handleChange} name="title" id="title" type="text" placeholder="Title" />
-            <input required value={txt} onChange={handleChange} name="txt" id="text" type="text" placeholder={placeholder} />
+            <textarea required value={txt} onChange={handleChange} name="txt" id="text" type="text" placeholder={placeholder} rows="3"></textarea>
             </li>
-            <li className="input-btns flex row">
+            <li className="input-btns flex row align-center justify-center space-between">
             <img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" />
             {!!colorPaletteVisible && <ColorPalette onSetNoteStyle={onSetNoteStyle} />}
             <img src="./assets/img/imgs-notes/input-image.svg" alt="" />
             <img src="./assets/img/imgs-notes/archive.svg" alt="" />
             <img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" />
-            <button><img src="./assets/img/imgs-notes/bookmark.svg" alt="" /></button>
+            <button className="btn-save-note"><img src="./assets/img/imgs-notes/bookmark.svg" alt="" /></button>
             </li>
         </form>
         </ul>

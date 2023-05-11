@@ -52,7 +52,7 @@ export function NoteIndex() {
 
     return (
         <section className="note-index full main-layout">
-            {/* {!visible && */}
+            {!visible &&
                 <ul onClick={() => onChangeVisible()} className="note-input clean-list flex align-center justify-center" >
                     <div class="add-note-bar">
                         <li>
@@ -67,10 +67,10 @@ export function NoteIndex() {
                         </li>
                     </div>
                 </ul>
-                {/* } */}
-            {/* {visible &&  */}
-            <NoteAdd />
-            {/* } */}
+            }
+            {visible &&
+                <NoteAdd />
+            }
             <NoteFilter DynamicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
             <NoteList notes={notes} onRemoveNote={onRemoveNote} />
         </section >
