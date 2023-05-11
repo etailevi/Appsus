@@ -22,3 +22,14 @@
 .note-item:first-of-type {
     margin-block-start: 0;
 }
+
+.note-item h1 {
+    font-family: Roboto-Regular;
+    font-size: 1.5em;
+    padding-inline-start: 1em;
+}
+
+.note-item p {
+    font-family: Roboto-Light;
+    font-size: 1em;
+}

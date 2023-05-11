@@ -1,4 +1,4 @@
-const { useEffect, useState } = React
+const { useEffect, useState, useRef } = React
 const { Link } = ReactRouterDOM
 
 import { NoteFilter } from "../cmps/note-filter.jsx"
@@ -10,7 +10,7 @@ import { showSuccessMsg } from "../../../services/event-bus.service.js"
 export function NoteIndex() {
 
     const [notes, setNotes] = useState([])
-    const [visible, setVisible] = useState(false)
+    const [visible, setVisible] = useState(true)
     const inputRef = useRef(null);
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
 
@@ -63,7 +63,9 @@ export function NoteIndex() {
                         </li>
                     </div>
                 </ul>}
-            {visible && <NoteAdd />}
+            {visible &&
+                <NoteAdd />
+            }
             <NoteFilter DynamicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
             <NoteList notes={notes} onRemoveNote={onRemoveNote} />
         </section >

@@ -47,7 +47,8 @@ const gNotes = [
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me'
+            title: 'Bobi and Me',
+            txt: utilService.makeLorem(10)
         },
         style: {
             backgroundColor: '#00d'
@@ -59,7 +60,8 @@ const gNotes = [
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me'
+            title: 'Bobi and Me',
+            txt: utilService.makeLorem(19)
         },
         style: {
             backgroundColor: '#00d'
@@ -71,7 +73,8 @@ const gNotes = [
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me'
+            title: 'Bobi and Me',
+            txt: utilService.makeLorem(13)
         },
         style: {
             backgroundColor: '#00d'
@@ -83,7 +86,8 @@ const gNotes = [
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me'
+            title: 'Bobi and Me',
+            txt: utilService.makeLorem(20)
         },
         style: {
             backgroundColor: '#00d'
@@ -95,7 +99,8 @@ const gNotes = [
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me'
+            title: 'Bobi and Me',
+            txt: utilService.makeLorem(20)
         },
         style: {
             backgroundColor: '#00d'
@@ -107,7 +112,8 @@ const gNotes = [
         isPinned: false,
         info: {
             url: 'http://some-img/me',
-            title: 'Bobi and Me'
+            title: 'Bobi and Me',
+            txt: utilService.makeLorem(8)
         },
         style: {
             backgroundColor: '#00d'
