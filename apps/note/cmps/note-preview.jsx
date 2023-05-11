@@ -22,6 +22,7 @@ export function NotePreview({ note }) {
             <article style={noteStyle} className="note-card">
                 {!!note.info && <h1>{note.info.title}</h1>}
                 {!!note.info && <p>{note.info.txt}</p>}
+                <button onClick={() => onRemoveNote(note.id)} ><img src="./assets/img/imgs-notes/trash.svg" alt="Trash" /></button>
             </article>
             <NoteTxt />
             <NoteImg />
