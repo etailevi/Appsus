@@ -17,7 +17,9 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
         setIsOn(false)
     }
 
-
+    const loggedInUserDetails = mailService.getUserDetails()
+    console.log(loggedInUserDetails)
+    console.log('email', loggedInUserDetails.email)
     function handleChange({ target }) {
         const field = target.name
         const value = target.value
@@ -26,7 +28,7 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
 
     function onSaveMail(ev) {
         ev.preventDefault()
-        setMailToAdd(mail => ({ ...mail, sentAt: Date.now() }))
+        setMailToAdd(mail => ({ ...mail, sentAt: Date.now(), from: loggedInUserDetails.email }))
         mailService.save(mailToAdd).then(() => {
             showSuccessMsg('Mail has been successfully sent')
             onMailSent()
@@ -50,7 +52,7 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
                         <input required onChange={handleChange} value={subject} type="text" name="subject" id="" placeholder="Subject" />
                         <textarea value={body} onChange={handleChange} name="body" id="" cols="30" rows="10"></textarea>
 
-                        <button className="btn-send-mail flex align-center justify-center space-between">Send<i class="fa-regular fa-paper-plane"></i></button>
+                        <button className="btn-send-mail flex align-center justify-center space-between">Send<i className="fa-regular fa-paper-plane"></i></button>
 
                     </form>
                 </li>
