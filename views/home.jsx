@@ -15,13 +15,13 @@ export function Home() {
                 <li>
                     <div className="img-container"><img src="./assets/img/home/Google_Keep_icon.svg" alt="Notes" /></div>
                     <h3>Notes</h3>
-                    <p>Immerse yourself in a world of literature with our vast collection of books, exploring various genres and authors.</p>
+                    <p>Capture your thoughts, ideas, and inspirations seamlessly with our versatile note-taking app, keeping you organized and productive.</p>
                     <NavLink to="/note"><button className="btn btn-card">Write a note</button></NavLink>
                 </li>
                 <li>
                     <div className="img-container"><img src="./assets/img/home/books.svg" alt="Books" /></div>
                     <h3>Books</h3>
-                    <p>Capture your thoughts, ideas, and inspirations seamlessly with our versatile note-taking app, keeping you organized and productive.</p>
+                    <p>Immerse yourself in a world of literature with our vast collection of books, exploring various genres and authors.</p>
                     <NavLink to="/book"><button className="btn btn-card">Read a book</button></NavLink>
                 </li>
             </ul>

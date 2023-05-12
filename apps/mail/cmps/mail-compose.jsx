@@ -38,7 +38,7 @@ export function MailCompose({ onMailSent }) {
                 <input required onChange={handleChange} value={to} type="email" name="to" id="" placeholder="To" />
                 <input required onChange={handleChange} value={subject} type="text" name="subject" id="" placeholder="Subject" />
                 <textarea value={body} onChange={handleChange} name="body" id="" cols="30" rows="10"></textarea>
-                <button>Send</button>
+                <button><img src="./assets/img/imgs-gmail/send.svg" alt="" /></button>
             </form>
         </section>
     )
