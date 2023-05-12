@@ -2,9 +2,13 @@
     padding-inline-start: 0;
 }
 
+.mail-index li:first-of-type{
+    margin-inline-end: .5em;
+}
+
 .filter-btns button {
     font-family: Roboto-Medium;
-    width: 98%;
+    width: 100%;
     height: 3em;
     margin-block-end: .1em;
 }
@@ -15,9 +19,8 @@
     padding: 1em;
     /* width: 7.5em; */
     background-color: white;
-    border: none;
+    border: 1px solid rgb(230, 236, 240);
     border-radius: 2em;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
     transition: .2s ease-in-out;
 }
 
@@ -30,10 +33,12 @@
 }
 
 .filter-btns button:hover {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
     background-color: rgb(230, 236, 240);
 }
 
 .btn-compose {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
     position: absolute;
     bottom: 1.5em;
     left: 1.5em;

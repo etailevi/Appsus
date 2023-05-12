@@ -23,7 +23,6 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
         setIsOn(false)
     }
 
-
     const loggedInUserDetails = mailService.getUserDetails()
 
     function handleChange({ target }) {

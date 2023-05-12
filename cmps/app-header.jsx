@@ -2,9 +2,9 @@ const { Link, NavLink } = ReactRouterDOM
 
 export function AppHeader() {
 
-    return <header className="app-header">
+    return <header className="app-header flex space-between align-center">
         <Link to="/">
-        <h1><img className="logo-header" src="assets/favicon/horse.png" alt=""/>Appsus</h1>
+        <h1 className="flex align-center"><img className="logo-header" src="assets/favicon/horse.png" alt=""/>Appsus</h1>
         </Link>
         <nav>
             <NavLink to="/"><img src="assets/img/home/home.svg" alt="Home" /></NavLink>
