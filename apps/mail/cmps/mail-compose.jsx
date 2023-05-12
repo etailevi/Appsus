@@ -12,15 +12,21 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
         setIsOn(true)
     }, [])
 
-    function clicked() {
+    async function clicked() {
         setIsComposeOpen(false)
+        if (body.length > 0 || subject.length > 0) {
+            const newMail = { ...mailToAdd, isDraft: true }
+            await mailService.save(newMail)
+            showSuccessMsg('Mail has been added to drafts')
+            console.log(newMail)
+        }
         setIsOn(false)
     }
 
     const loggedInUserDetails = mailService.getUserDetails()
     console.log(loggedInUserDetails)
     console.log('email', loggedInUserDetails.email)
-    function handleChange({ target }) {
+    function ({ target }) {
         const field = target.name
         const value = target.value
         setMailToAdd(mail => ({ ...mail, [field]: value }))
