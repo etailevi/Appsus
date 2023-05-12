@@ -9,7 +9,8 @@ export const utilService = {
     debounce,
     saveToStorage,
     loadFromStorage,
-    intToFormat
+    intToFormat,
+    capitalFirstLetter
 }
 
 function makeId(length = 6) {
@@ -119,3 +120,8 @@ function intToFormat(num) {
     }
     return formattedDate
 }
+
+function capitalFirstLetter(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+  
