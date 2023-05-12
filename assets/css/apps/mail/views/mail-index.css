@@ -1,1 +1,26 @@
- /* mail index  */
+.btn-compose {
+    font-family: Roboto-Medium;
+    padding: 1em;
+    width: 7.5em;
+    background-color: white;
+    border: none;
+    border-radius: 2em;
+    position: absolute;
+    bottom: 1.5em;
+    left: 1.5em;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
+    transition: .2s ease-in-out;
+}
+
+.btn-compose img {
+    width: 1.5em;
+}
+
+.btn-compose:hover {
+    background-color: rgb(177, 20, 20);
+    color: white;
+}
+
+.btn-compose:hover * {
+    scale: 1.1;
+}

@@ -1,0 +1,25 @@
+.mail-compose {
+    z-index: 1;
+    position: sticky;
+    bottom: 0;
+    left: 1em;
+    width: 400px;
+    height: 60vh;
+    background-color: white;
+}
+
+.mail-compose ul {
+    padding-inline-start: 0;
+}
+
+.compose-header {
+    background-color: rgb(230, 236, 240);
+    padding: .7em;
+    margin-block-start: 0;
+}
+
+.close-compose {
+    background-color: transparent;
+    border: none;
+    font-family: Roboto-Medium;
+}

@@ -86,7 +86,10 @@ export function MailIndex() {
             {/* <button><Link to={`/mail/sent`} >Sent</Link ></button> */}
             <MailFilter onSetFilter={onSetFilter} filterBy={filterBy} />
             <MailList mails={mails} onMarkRead={onMarkRead} onRemoveMail={onRemoveMail} onStarMail={onStarMail} onImportantMail={onImportantMail} />
-            {!isComposeOpen && <button onClick={toggleCompose}>Compose</button>}
+            {!isComposeOpen && <button onClick={toggleCompose} className="btn-compose flex align-center justify-center space-between">
+            <i class="fa-solid fa-pencil"></i>
+                Compose
+            </button>}
             {isComposeOpen && <MailCompose onMailSent={onMailSent} />}
         </section>
     )

@@ -19,7 +19,7 @@
 
 @import './apps/mail/views/mail-preview.css';
 @import './apps/mail/views/mail-list.css';
-/* @import './apps/mail/views/mail-index.css'; */
+@import './apps/mail/views/mail-index.css';
 
 /* Cmps */
 
