@@ -145,7 +145,6 @@ function query(filterBy = {}) {
             if (filterBy.type) {
                 notes = notes.filter(note => note.type === filterBy.type)
             }
-            console.log('entered query')
             return notes
         })
 }
@@ -160,7 +159,6 @@ function remove(noteId) {
 }
 
 function save(note) {
-    console.log('note from save', note)
     if (note.id) {
         return storageService.put(NOTE_KEY, note)
     } else {

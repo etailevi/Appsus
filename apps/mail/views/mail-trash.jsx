@@ -18,14 +18,15 @@ export function MailTrash() {
         mailService.query(filterBy).then(setMails)
     }
 
+
     function onRemoveMailFinal(mailId) {
-        console.log(mailId)
         mailService.remove(mailId).then(() => {
             const updatedMails = mails.filter(mail => mail.id !== mailId)
             setMails(updatedMails)
             showSuccessMsg(`Mail has been successfully removed from recycle bin`)
         })
     }
+
     if (mails.length === 0) return <div>The trash bin is empty</div>
     return (
         <section>
