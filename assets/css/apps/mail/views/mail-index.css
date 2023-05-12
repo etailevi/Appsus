@@ -1,17 +1,45 @@
+.mail-index ul {
+    padding-inline-start: 0;
+}
+
+.filter-btns button {
+    font-family: Roboto-Medium;
+    width: 98%;
+    height: 3em;
+    margin-block-end: .1em;
+}
+
+.filter-btns button,
 .btn-compose {
     font-family: Roboto-Medium;
     padding: 1em;
-    width: 7.5em;
+    /* width: 7.5em; */
     background-color: white;
     border: none;
     border-radius: 2em;
-    position: absolute;
-    bottom: 1.5em;
-    left: 1.5em;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
     transition: .2s ease-in-out;
 }
 
+.filter-btns {
+    width: 15em;
+}
+
+.filter-btns button {
+    border-radius: 0 2em 2em 0;
+}
+
+.filter-btns button:hover {
+    background-color: rgb(230, 236, 240);
+}
+
+.btn-compose {
+    position: absolute;
+    bottom: 1.5em;
+    left: 1.5em;
+}
+
+.filter-btns button img,
 .btn-compose img {
     width: 1.5em;
 }
