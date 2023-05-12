@@ -45,13 +45,13 @@
     font-size: 1.2em;
     border-radius: 2em;
     background-color: white;
-    border: none;
-    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
+    border: 1px solid rgba(198, 193, 193, 0.6);
     padding-inline-start: 0.6em;
     padding-inline-end: 2em;
 }
 
 .mail-filter input:focus {
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
     outline: none;
 }
 
