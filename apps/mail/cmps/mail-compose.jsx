@@ -26,7 +26,7 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
     const loggedInUserDetails = mailService.getUserDetails()
     console.log(loggedInUserDetails)
     console.log('email', loggedInUserDetails.email)
-    function ({ target }) {
+    function handleChange({ target }) {
         const field = target.name
         const value = target.value
         setMailToAdd(mail => ({ ...mail, [field]: value }))
