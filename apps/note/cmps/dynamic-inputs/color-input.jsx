@@ -1,5 +1,5 @@
 
-export function ColorInput({ onSetNoteStyle }) {
+export function ColorInput({ onSetNoteStyle, noteId }) {
     const colors = ['#B4FF9F', '#F9FFA4', '#FFD59E', '#FFA1A1']
 
     function onChooseColor(color) {
@@ -7,16 +7,14 @@ export function ColorInput({ onSetNoteStyle }) {
         onSetNoteStyle(newStyle)
     }
 
-    return <section className="color-input">
-        <div className="items-container">
-            {
-                colors.map(color => <div
-                    className="item"
-                    key={color}
-                    style={{ backgroundColor: color }}
-                    onClick={() => onChooseColor(color)}
-                ></div>)
-            }
-        </div>
+    return <section className="color-input-container">
+        {
+            colors.map(color => <div
+                className="color-input"
+                key={color}
+                style={{ backgroundColor: color }}
+                onClick={() => onChooseColor(noteId, color)}
+            ></div>)
+        }
     </section>
 }

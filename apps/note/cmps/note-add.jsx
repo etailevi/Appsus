@@ -8,10 +8,11 @@ import { utilService } from "../services/util.service.js"
 export function NoteAdd({ onAddNote }) {
     const [noteToAdd, setNoteToAdd] = useState(noteService.getEmptyNote())
     const [placeholder, setPlaceholder] = useState("Enter your note here..");
-    const [cmpType, setCmpType] = useState('color')
+    const [noteColor, setNoteColor] = useState('color')
     const [colorPaletteVisible, setColorPaletteVisible] = useState(false)
     const [noteStyle, setNoteStyle] = useState({
         backgroundColor: 'white',
+        fontSize: '16px'
     })
 
     function onSetNoteStyle(newStyle) {
@@ -45,30 +46,42 @@ export function NoteAdd({ onAddNote }) {
         ev.preventDefault()
         noteService.save(noteToAdd).then(() => {
             onAddNote()
-
         })
     }
 
     function onColorSelect(color) { }
 
+
     const { title, txt } = noteToAdd
     return (
-        <ul className="note-add-input clean-list">
-            <form onSubmit={onSaveNote}>
-                <li className="input-title flex column">
-                    <label htmlFor="title"></label>
-                    <input value={title} onChange={handleChange} name="title" id="title" type="text" placeholder="Title" />
-                    <textarea required value={txt} onChange={handleChange} name="txt" id="text" type="text" placeholder={placeholder} rows="3"></textarea>
-                </li>
-                <li className="input-btns flex row align-center justify-center space-between">
-                    <button><img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" />
-                        {!!colorPaletteVisible && <ColorPalette onSetNoteStyle={onSetNoteStyle} />}</button>
-                    <button><img src="./assets/img/imgs-notes/input-image.svg" alt="" /></button>
-                    <button><img src="./assets/img/imgs-notes/archive.svg" alt="" /></button>
-                    <button><img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" /></button>
-                    <button><img src="./assets/img/imgs-notes/bookmark.svg" alt="" /></button>
-                </li>
-            </form>
-        </ul>
+        <section>
+
+            <ul className="note-add-input clean-list">
+                <form>
+                    <li className="input-title flex column">
+                        <label htmlFor="title"></label>
+                        <input value={title} onChange={handleChange} name="title" id="title" type="text" placeholder="Title" />
+                        <textarea value={txt} onChange={handleChange} name="txt" id="text" type="text" placeholder={placeholder} rows="3"></textarea>
+                    </li>
+                    <li className="input-btns flex row align-center justify-center space-between">
+                        <button><img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" />
+                            {!!colorPaletteVisible && <DynamicCmp noteColor={noteColor} onSetNoteStyle={noteColor} />}</button>
+                        <button><img src="./assets/img/imgs-notes/input-image.svg" alt="" /></button>
+                        <button><img src="./assets/img/imgs-notes/archive.svg" alt="" /></button>
+                        <button><img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" /></button>
+                        <button><img onClick={() => onSaveNote()} src="./assets/img/imgs-notes/bookmark.svg" alt="" /></button>
+                    </li>
+                </form>
+            </ul>
+        </section>
     )
+}
+
+function DynamicCmp(props) {
+    switch (props.noteColor) {
+        case 'color':
+            return <ColorInput {...props} />
+        // case 'fontSize':
+        //     return <FontsizeInput {...props} />
+    }
 }

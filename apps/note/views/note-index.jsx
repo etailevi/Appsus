@@ -18,10 +18,10 @@ export function NoteIndex() {
 
     useEffect(() => {
         loadNotes()
-        window.addEventListener("click", handleClickOutside);
-        return () => {
-            window.removeEventListener("click", handleClickOutside);
-        }
+        // window.addEventListener("click", handleClickOutside);
+        // return () => {
+        //     window.removeEventListener("click", handleClickOutside);
+        // }
     }, [filterBy, visible])
 
     function loadNotes() {
