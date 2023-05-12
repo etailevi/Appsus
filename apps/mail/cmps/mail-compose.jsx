@@ -23,13 +23,14 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
         setIsOn(false)
     }
 
-    const loggedInUserDetails = mailService.getUserDetails()
-    console.log(loggedInUserDetails)
-    console.log('email', loggedInUserDetails.email)
-    function ({ target }) {
-        const field = target.name
-        const value = target.value
-        setMailToAdd(mail => ({ ...mail, [field]: value }))
+    const loggedInUserDetails = mailService.getUserDetails();
+    console.log(loggedInUserDetails);
+    console.log('email', loggedInUserDetails.email);
+
+    function handleChange({ target }) {
+        const field = target.name;
+        const value = target.value;
+        setMailToAdd((mail) => ({ ...mail, [field]: value }));
     }
 
     function onSaveMail(ev) {

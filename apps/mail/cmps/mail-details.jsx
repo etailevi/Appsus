@@ -20,9 +20,21 @@ export function MailDetails() {
         loadPreviousBookId()
     }, [mailId])
 
+    console.log(mail)
+    async function setAsRead(updatedEmail) {
+        setMail((mail) => ({ ...mail, isRead: true }))
+        await mailService.save(updatedEmail)
+    }
+
     function loadBook() {
         mailService.get(mailId)
-            .then(setMail)
+            .then(mail => {
+                setMail(mail);
+                return mail
+            })
+            .then((mail) => {
+                setAsRead({ ...mail, isRead: true })
+            })
             .catch(err => {
                 console.log('Had issued in mail details:', err);
                 navigate('/mail')
