@@ -7,6 +7,14 @@
     padding: 5px;
 }
 
+.mail-preview hr {
+    margin: 0;
+}
+
+.mail-preview:hover {
+    background-color: rgb(235, 225, 225);
+}
+
 .mail-preview img {
     width: 20px;
     cursor: pointer;
