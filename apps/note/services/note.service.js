@@ -21,7 +21,7 @@ const gNotes = [
         type: 'NoteTxt',
         isPinned: true,
         style: {
-            backgroundColor: 'yellow'
+            backgroundColor: '#FFD1D1'
         },
         info: {
             title: 'Happy Day',
@@ -38,7 +38,7 @@ const gNotes = [
             txt: utilService.makeLorem(20)
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: '#FBFFDE'
         }
     },
     {
@@ -51,7 +51,7 @@ const gNotes = [
             txt: utilService.makeLorem(10)
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: '#D7FDDF'
         }
     },
     {
@@ -64,7 +64,7 @@ const gNotes = [
             txt: utilService.makeLorem(19)
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: '#E0FFFD'
         }
     },
     {
@@ -77,7 +77,7 @@ const gNotes = [
             txt: utilService.makeLorem(13)
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: '#D0D0FE'
         }
     },
     {
@@ -90,7 +90,7 @@ const gNotes = [
             txt: utilService.makeLorem(20)
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: '#F9DEFF'
         }
     },
     {
@@ -103,7 +103,7 @@ const gNotes = [
             txt: utilService.makeLorem(20)
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: 'lightgray'
         }
     },
     {
@@ -116,7 +116,7 @@ const gNotes = [
             txt: utilService.makeLorem(8)
         },
         style: {
-            backgroundColor: '#00d'
+            backgroundColor: 'white'
         }
     },
     {

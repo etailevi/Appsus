@@ -23,7 +23,7 @@ export function NotePreview({ note, onRemoveNote }) {
 
     return (
         <section style={noteStyle} className="note-container">
-            <article className="note-card">
+            <article className="note-card" style={{backgroundColor: 'note.style.backgroundColor'}}>
                 {!!note.info && <h1>{note.info.title}</h1>}
                 {!!note.info && <p>{note.info.txt}</p>}
                         <button className="note-pin" onClick={() => onPinNote(note.id)} ><img src="./assets/img/imgs-notes/pin.svg" alt="Pin Note" /></button>

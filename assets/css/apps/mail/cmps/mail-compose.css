@@ -1,10 +1,11 @@
 .mail-compose {
     z-index: 1;
-    position: sticky;
+    position: fixed;
     bottom: 0;
     left: 1em;
     width: 400px;
     height: 60vh;
+    border-radius: 1em 1em 0 0;
     background-color: white;
     box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
 }
@@ -67,8 +68,8 @@
 
 .btn-send-mail {
     position: absolute;
-    right: 1.5em;
-    bottom: .5em;
+    right: 1.2em;
+    bottom: .7em;
     font-family: Roboto-Medium;
     padding: 1em;
     width: 5.8em;
@@ -85,7 +86,7 @@
 }
 
 .btn-send-mail:hover {
-    background-color: rgb(73, 120, 207);
+    background-color: rgb(107, 146, 219);
     color: white;
 }
 
