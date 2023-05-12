@@ -43,10 +43,10 @@ const gNotes = [
     },
     {
         id: utilService.makeId(),
-        type: 'NoteImg',
+        type: 'NoteTxt',
         isPinned: false,
         info: {
-            url: 'http://some-img/me',
+            // url: 'http://some-img/me',
             title: 'Get a haircut',
             txt: utilService.makeLorem(10)
         },
@@ -56,10 +56,10 @@ const gNotes = [
     },
     {
         id: utilService.makeId(),
-        type: 'NoteImg',
+        type: 'NoteTxt',
         isPinned: false,
         info: {
-            url: 'http://some-img/me',
+            // url: 'http://some-img/me',
             title: 'Buy some new T-shirts',
             txt: utilService.makeLorem(19)
         },
@@ -69,10 +69,10 @@ const gNotes = [
     },
     {
         id: utilService.makeId(),
-        type: 'NoteImg',
+        type: 'NoteTxt',
         isPinned: false,
         info: {
-            url: 'http://some-img/me',
+            // url: 'http://some-img/me',
             title: 'Survive sprint 3',
             txt: utilService.makeLorem(13)
         },
@@ -82,10 +82,10 @@ const gNotes = [
     },
     {
         id: utilService.makeId(),
-        type: 'NoteImg',
+        type: 'NoteTxt',
         isPinned: false,
         info: {
-            url: 'http://some-img/me',
+            // url: 'http://some-img/me',
             title: 'Get married',
             txt: utilService.makeLorem(20)
         },
@@ -95,10 +95,10 @@ const gNotes = [
     },
     {
         id: utilService.makeId(),
-        type: 'NoteImg',
+        type: 'NoteTxt',
         isPinned: false,
         info: {
-            url: 'http://some-img/me',
+            // url: 'http://some-img/me',
             title: 'Eat lunch with my sister',
             txt: utilService.makeLorem(20)
         },
@@ -108,10 +108,10 @@ const gNotes = [
     },
     {
         id: utilService.makeId(),
-        type: 'NoteImg',
+        type: 'NoteTxt',
         isPinned: false,
         info: {
-            url: 'http://some-img/me',
+            // url: 'http://some-img/me',
             title: 'Travel to Paris',
             txt: utilService.makeLorem(8)
         },

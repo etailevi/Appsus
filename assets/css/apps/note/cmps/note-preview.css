@@ -8,7 +8,8 @@
     padding-block-end: 30px;
 }
 
-.note-pin, .note-card li {
+.note-pin,
+.note-card li {
     border: none;
     background-color: transparent;
     position: absolute;
@@ -19,7 +20,8 @@
     background-color: transparent;
 }
 
-.note-pin:hover, .note-card li button:hover {
+.note-pin:hover,
+.note-card li button:hover {
     opacity: .6;
     scale: 1.1;
 }
@@ -32,4 +34,9 @@
 .note-pin {
     left: 5px;
     top: 15px;
+}
+
+.note-img {
+    width: 100%;
+    object-fit: cover;
 }

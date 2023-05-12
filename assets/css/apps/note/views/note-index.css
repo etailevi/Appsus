@@ -1,6 +1,6 @@
 /* note index */
 
-.note-index img {
+.note-index img:not(.note-img img) {
     width: 25px;
 }
 
