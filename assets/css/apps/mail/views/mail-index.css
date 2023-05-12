@@ -40,8 +40,9 @@
 }
 
 .filter-btns button img,
-.btn-compose img {
+.btn-compose i {
     width: 1.5em;
+    padding-inline-end: .2em;
 }
 
 .btn-compose:hover {
