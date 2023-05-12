@@ -10,6 +10,7 @@
 
 .mail-compose ul {
     padding-inline-start: 0;
+    width: 100%;
 }
 
 .compose-header {
@@ -22,4 +23,64 @@
     background-color: transparent;
     border: none;
     font-family: Roboto-Medium;
+}
+
+.mail-compose form {
+    height: 380px;
+    position: relative;
+}
+
+.mail-compose input {
+    width: 381px;
+    display: block;
+    height: 2.5em;
+    border: none;
+    border-block-end: 1px solid rgb(230, 236, 240);
+    padding-inline: .7em;
+}
+
+.mail-compose input:focus,
+.mail-compose textarea:focus {
+    outline: 0;
+}
+
+.mail-compose textarea {
+    width: 100%;
+    height: 220px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    font-size: 1.1em;
+    font-family: Roboto-Regular;
+    padding-inline-start: .7em;
+    margin-block-end: 30px;
+    resize: none;
+}
+
+.btn-send-mail {
+    position: absolute;
+    right: 1.5em;
+    bottom: 1em;
+    font-family: Roboto-Medium;
+    padding: 1em;
+    width: 5.8em;
+    background-color: white;
+    border: none;
+    border-radius: 2em;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
+    transition: .2s ease-in-out;
+}
+
+.btn-send-mail i {
+    width: 1.5em;
+}
+
+.btn-send-mail:hover {
+    background-color: rgb(56, 175, 230);
+    color: white;
+}
+
+.btn-send-mail:hover * {
+    scale: 1.1;
 }
