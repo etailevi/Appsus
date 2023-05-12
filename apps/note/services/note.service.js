@@ -33,7 +33,7 @@ const gNotes = [
         type: 'NoteImg',
         isPinned: false,
         info: {
-            url: 'http://some-img/me',
+            url: './assets/img/imgs-notes/Prince Charmer.jpg',
             title: 'Bobi and Me',
             txt: utilService.makeLorem(20)
         },

@@ -14,8 +14,8 @@
     display: grid;
     /* grid-template-columns: 2;
     grid-template-rows: 4; */
-    border: 1px solid darkgray;
-    border-radius: 1em;
+    /* border: 1px solid darkgray; */
+    border-radius: 1.1em;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     background-color: rgb(255, 251, 235);
     break-inside: avoid;

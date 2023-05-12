@@ -4,7 +4,7 @@ export function Home() {
     return (
         <section className="home">
             <h1>Welcome to Appsus!</h1>
-            <h2>The only place where you can have it all-in-one</h2>
+            <h2>The only place where you can have it all-in-one.</h2>
             <ul className="clean-list flex align-center justify-center">
                 <li>
                     <div className="img-container img-gmail"><img src="./assets/img/home/gmail_logo.svg" alt="Mail" /></div>

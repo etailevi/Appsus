@@ -23,16 +23,6 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
         setIsOn(false)
     }
 
-<<<<<<< HEAD
-    const loggedInUserDetails = mailService.getUserDetails();
-    console.log(loggedInUserDetails);
-    console.log('email', loggedInUserDetails.email);
-
-    function handleChange({ target }) {
-        const field = target.name;
-        const value = target.value;
-        setMailToAdd((mail) => ({ ...mail, [field]: value }));
-=======
     const loggedInUserDetails = mailService.getUserDetails()
     console.log(loggedInUserDetails)
     console.log('email', loggedInUserDetails.email)
@@ -40,7 +30,6 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
         const field = target.name
         const value = target.value
         setMailToAdd(mail => ({ ...mail, [field]: value }))
->>>>>>> 779267a33f1911ec84fb1bc06af04b8586a702cf
     }
 
     function onSaveMail(ev) {

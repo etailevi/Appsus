@@ -42,11 +42,12 @@
     background-color: transparent;
     color: black;
     height: 35px;
+    width: 35px;
     cursor: pointer;
     transition: .2s ease-in-out;
 }
 
 .add-note-bar button:hover {
-    background-color: rgb(220, 213, 200);
+    background-color: rgb(231, 231, 231);
     border-radius: 2em;
 }
