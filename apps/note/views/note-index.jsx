@@ -56,6 +56,7 @@ export function NoteIndex() {
         setVisible(prevIsVisible => !prevIsVisible)
     }
 
+    if (!notes) return 'Loading...'
     return (
         <section className="note-index full main-layout">
             {!visible &&
