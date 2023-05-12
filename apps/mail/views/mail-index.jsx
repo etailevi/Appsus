@@ -18,6 +18,8 @@ export function MailIndex() {
         loadMails()
     }, [filterBy, isComposeOpen])
 
+
+
     function loadMails() {
         mailService.query(filterBy).then(setMails)
     }
@@ -33,6 +35,11 @@ export function MailIndex() {
     function onStarMail(mail) {
         mail.isStared = true
         mailService.save(mail).then(loadMails)
+    }
+
+    function onMarkRead(mail) {
+        mail.isRead = true
+        mailService.save(mail)
     }
 
     function onImportantMail(mail) {
@@ -69,6 +76,7 @@ export function MailIndex() {
         setIsComposeOpen(!isComposeOpen);
         loadMails()
     }
+
     if (!mails) return <div>Loading...</div>
     return (
         <section>
@@ -77,7 +85,7 @@ export function MailIndex() {
             <button><Link to={`/mail/important`} >Important</Link ></button>
             {/* <button><Link to={`/mail/sent`} >Sent</Link ></button> */}
             <MailFilter onSetFilter={onSetFilter} filterBy={filterBy} />
-            <MailList mails={mails} onRemoveMail={onRemoveMail} onStarMail={onStarMail} onImportantMail={onImportantMail} />
+            <MailList mails={mails} onMarkRead={onMarkRead} onRemoveMail={onRemoveMail} onStarMail={onStarMail} onImportantMail={onImportantMail} />
             {!isComposeOpen && <button onClick={toggleCompose}>Compose</button>}
             {isComposeOpen && <MailCompose onMailSent={onMailSent} />}
         </section>
