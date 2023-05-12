@@ -217,7 +217,7 @@ function save(mail) {
 }
 
 function getDefaultFilter() {
-    return { subject: '', body: '', name: '', to: '', from: '', isArchive: false, isRemoved: false }
+    return { subject: '', body: '', name: '', to: '', from: '', isArchive: false, isRemoved: false, isDraft: false }
 }
 
 // status: '', isRead: '', isStared: '', labels: '', isArchive: '', isSchedule: ''
@@ -267,7 +267,7 @@ function getRandomDate() {
 function getEmptyMail() {
     return {
         id: '',
-        from: loggedinUser.email,
+        from: '',
         name: '',
         to: '',
         isRead: false,

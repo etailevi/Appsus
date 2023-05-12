@@ -5,6 +5,8 @@ import { mailService } from "../services/mail.service.js"
 import { MailList } from "../cmps/mail-list.jsx"
 import { MailFilter } from "../cmps/mail-filter.jsx"
 import { MailCompose } from "../cmps/mail-compose.jsx";
+import { MailDetails } from "../cmps/mail-details.jsx";
+import { MailDraft } from "./apps/mail/views/mail-draft.jsx"
 import { showSuccessMsg } from "../../../services/event-bus.service.js"
 
 export function MailIndex() {
@@ -71,8 +73,9 @@ export function MailIndex() {
                     <button><Link to={`/mail/starred-mails`} ><img src="./assets/img/imgs-gmail/star-fill.svg" alt="" />Starred</Link ></button>
                     <button><Link to={`/mail/important`} ><img src="./assets/img/imgs-gmail/label-important.svg" alt="" />Important</Link ></button>
                     <button><Link to={`/mail/archive`} ><img src="./assets/img/imgs-gmail/archive-mail.svg" alt="archive mail" />Archive</Link ></button>
+                    <button><Link to={`/mail/sent`} >Sent</Link ></button>
+                    <button><Link to={`/mail/draft`} ><img src="./assets/img/imgs-gmail/delete-mail.svg" alt="delete mail" />Draft</Link ></button>
                     <button><Link to={`/mail/trash`} ><img src="./assets/img/imgs-gmail/delete-mail.svg" alt="delete mail" />Trash</Link ></button>
-                    {/* <button><Link to={`/mail/sent`} >Sent</Link ></button> */}
                 </li>
                 <li>
                     <MailList mails={mails} onRemoveMail={onRemoveMail} onUpdateMail={onUpdateMail} />

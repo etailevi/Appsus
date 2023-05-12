@@ -5,14 +5,28 @@ const { Link } = ReactRouterDOM
 import { mailService } from "../services/mail.service.js"
 
 
-export function MailDetails(mail) {
+export function MailDetails() {
 
-    function loadMail() {
+    const [mail, setMail] = useState(null)
+    const [nextMailId, setNextMailId] = useState(null)
+    const [previousMailId, setPreviousMailId] = useState(null)
+    const { mailId } = useParams()
+    const navigate = useNavigate()
+
+
+    useEffect(() => {
+        loadBook()
+        loadNextBookId()
+        loadPreviousBookId()
+    }, [mailId])
+
+    function loadBook() {
         mailService.get(mailId)
             .then(setMail)
             .catch(err => {
                 console.log('Had issued in mail details:', err);
                 navigate('/mail')
+                showErrorMsg('Mail not found!')
             })
     }
 
@@ -24,17 +38,21 @@ export function MailDetails(mail) {
         mailService.getPreviousMailId(mailId).then(setPreviousMailId)
     }
 
-    const { id, subject, body, sentAt, removeAt, name, to } = mail
-    let from = '<' + mail.from + '>'
+    function onBack() {
+        navigate('/mail')
+    }
+    if (!mail) return <div>Loading...</div>
+    const { id, subject, body, sentAt, removeAt, name, to, from } = mail
     return (
         <section className="mail-details">
             <ul className="clean-list flex space-between"><li><h3>{subject}</h3></li>
                 {/* <li>Back
-                Save as a Note
                 Delete
             </li> */}
-                <h4>{!!name && name}</h4><p className="email-sender-details">{from}</p>
+                <h4>{!!name && name}</h4><p className="email-sender-details">{from ? '<' + from + '>' : ''}</p>
                 <p>{body}</p>
+                <Link to={`/mail/${previousMailId}`}>Previous (איתי שם פה חץ)</Link>
+                <Link to={`/mail/${nextMailId}`}>Next (איתי שם פה חץ)</Link>
             </ul>
         </section>
     )
