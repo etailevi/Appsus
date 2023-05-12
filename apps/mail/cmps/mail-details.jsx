@@ -57,24 +57,14 @@ export function MailDetails() {
     const { id, subject, body, sentAt, removeAt, name, to, from } = mail
     return (
         <section className="mail-details">
-            <ul className="clean-list flex space-between">
+            <ul className="clean-list flex space-between"><li><h3>{subject}</h3></li>
                 {/* <li>Back
                 Delete
             </li> */}
-                <Link to={`/mail/${previousMailId}`} className="flex row"><img src="./assets/img/imgs-gmail/arrow-left.svg" alt="previous" /> Previous</Link>
-            <li>
-                <h3>{subject}</h3>
-            </li>
-            <li>
-                <h4>{!!name && name}</h4>
-            </li>
-            <li>
-                <p className="email-sender-details">{from ? '<' + from + '>' : ''}</p>
-            </li>
-            <li>
+                <h4>{!!name && name}</h4><p className="email-sender-details">{from ? '<' + from + '>' : ''}</p>
                 <p>{body}</p>
-            </li>
-                <Link to={`/mail/${nextMailId}`} className="flex row">Next <img src="./assets/img/imgs-gmail/arrow-right.svg" alt="next" /></Link>
+                <Link to={`/mail/${previousMailId}`}>Previous (איתי שם פה חץ)</Link>
+                <Link to={`/mail/${nextMailId}`}>Next (איתי שם פה חץ)</Link>
             </ul>
         </section>
     )
