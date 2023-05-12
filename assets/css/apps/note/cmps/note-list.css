@@ -6,8 +6,8 @@
     margin: 15px;
 }
 
-.note-container {
-    padding-inline: 3em;
+.note-wrapper {
+    margin-inline: 3em;
 }
 
 .note-item {
