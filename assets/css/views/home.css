@@ -31,6 +31,8 @@
     border: 1px solid rgba(230, 230, 230, 0.559);
     background-color: rgb(241, 241, 241);
     border-radius: 1em;
+    display: flex;
+    flex-direction: column;
     transition: .2s ease-in-out;
 }
 
@@ -68,6 +70,7 @@
   -webkit-user-select: none;
   touch-action: manipulation;
   white-space: nowrap;
+  align-self: flex-end;
 }
 
 .home button:not([disabled]):focus {
