@@ -4,7 +4,7 @@ import { NotePreview } from "../cmps/note-preview.jsx"
 
 export function NoteList({ notes, onRemoveNote }) {
     return (
-        <ul className="note-container clean-list columns">
+        <ul className="note-wrapper clean-list columns">
             {notes.map(note =>
                 <li key={note.id} className="note-item">
                     <section>
