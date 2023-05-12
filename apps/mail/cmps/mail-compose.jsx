@@ -3,7 +3,7 @@ import { showSuccessMsg } from "../../../services/event-bus.service.js"
 
 const { useEffect, useState } = React
 
-export function MailCompose({ onMailSent }) {
+export function MailCompose({ onMailSent, setIsComposeOpen }) {
 
     const [mailToAdd, setMailToAdd] = useState(mailService.getEmptyMail())
     const [isOn, setIsOn] = useState(true)
@@ -11,6 +11,11 @@ export function MailCompose({ onMailSent }) {
     useEffect(() => {
         setIsOn(true)
     }, [])
+
+    function clicked() {
+        setIsComposeOpen(false)
+        setIsOn(false)
+    }
 
 
     function handleChange({ target }) {
@@ -35,19 +40,19 @@ export function MailCompose({ onMailSent }) {
             <ul className="clean-list">
                 <li className="compose-header flex row space-between align-center">
                     <h4>New Message</h4>
-                    <button className="close-compose" onClick={() => setIsOn(false)}><i className="fa-solid fa-x"></i></button>
+                    <button className="close-compose" onClick={() => clicked()}><i className="fa-solid fa-x"></i></button>
                 </li>
                 <li className="flex row">
-                <form onSubmit={onSaveMail}>
-                    {/* <h5 className="mail-compose-msg"></h5> */}
-                    {/* <input required onChange={handleChange} value={from} type="email" name="from" id="" placeholder="Your-Mail" /> */}
-                    <input required onChange={handleChange} value={to} type="email" name="to" id="" placeholder="To" />
-                    <input required onChange={handleChange} value={subject} type="text" name="subject" id="" placeholder="Subject" />
-                    <textarea value={body} onChange={handleChange} name="body" id="" cols="30" rows="10"></textarea>
-                 
-                    <button className="btn-send-mail flex align-center justify-center space-between">Send<i class="fa-regular fa-paper-plane"></i></button>
-                 
-                </form>
+                    <form onSubmit={onSaveMail}>
+                        {/* <h5 className="mail-compose-msg"></h5> */}
+                        {/* <input required onChange={handleChange} value={from} type="email" name="from" id="" placeholder="Your-Mail" /> */}
+                        <input required onChange={handleChange} value={to} type="email" name="to" id="" placeholder="To" />
+                        <input required onChange={handleChange} value={subject} type="text" name="subject" id="" placeholder="Subject" />
+                        <textarea value={body} onChange={handleChange} name="body" id="" cols="30" rows="10"></textarea>
+
+                        <button className="btn-send-mail flex align-center justify-center space-between">Send<i class="fa-regular fa-paper-plane"></i></button>
+
+                    </form>
                 </li>
             </ul>
         </section>

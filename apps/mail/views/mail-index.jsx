@@ -59,8 +59,7 @@ export function MailIndex() {
     }
 
     function onMailSent() {
-        setIsComposeOpen(!isComposeOpen);
-        loadMails()
+        setIsComposeOpen(false);
     }
 
     if (!mails) return <div>Loading...</div>
@@ -77,7 +76,7 @@ export function MailIndex() {
                 <i className="fa-solid fa-pencil"></i>
                 Compose
             </button>}
-            {isComposeOpen && <MailCompose onMailSent={onMailSent} />}
+            {isComposeOpen && <MailCompose setIsComposeOpen={setIsComposeOpen} onMailSent={onMailSent} />}
         </section>
     )
 }
