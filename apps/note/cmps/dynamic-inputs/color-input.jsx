@@ -13,7 +13,7 @@ export function ColorInput({ onSetNoteStyle, noteId }) {
                 className="color-input"
                 key={color}
                 style={{ backgroundColor: color }}
-                onClick={() => onChooseColor(noteId, color)}
+                onClick={() => onChooseColor(color)}
             ></div>)
         }
     </section>
