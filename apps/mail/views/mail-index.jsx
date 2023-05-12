@@ -69,7 +69,7 @@ export function MailIndex() {
             <ul className="clean-list flex row">
                 <li className="filter-btns flex column align-center">
                     <button><Link to={`/mail/starred-mails`} ><img src="./assets/img/imgs-gmail/star-fill.svg" alt=""/>Starred</Link ></button>
-                    <button><Link to={`/mail/important`} ><img src="./assets/img/imgs-gmail/label-important.svg" alt="" />Important</Link ></button>
+                    <button><Link to={`/mail/important`} ><img src="./assets/img/imgs-gmail/label-important-fill.svg" alt="" />Important</Link ></button>
                     <button><Link to={`/mail/archive`} ><img src="./assets/img/imgs-gmail/archive-mail.svg" alt="archive mail" />Archive</Link ></button>
                     <button><Link to={`/mail/trash`} ><img src="./assets/img/imgs-gmail/delete-mail.svg" alt="delete mail" />Trash</Link ></button>
                     {/* <button><Link to={`/mail/sent`} >Sent</Link ></button> */}
