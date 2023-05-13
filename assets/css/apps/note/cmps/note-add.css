@@ -38,7 +38,7 @@ textarea {
     border: none;
     background-color: transparent;
     font-size: 1.1em;
-    font-family: Roboto-Regular;
+    font-family: Roboto-Regular, sans-serif;
     padding-inline-start: 0.6em;
     margin-block-end: 30px;
     resize: none;

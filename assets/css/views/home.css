@@ -1,53 +1,53 @@
- /* home */
+/* home */
 
- .home {
+.home {
   text-align: center;
- }
+}
 
- .home h1 {
+.home h1 {
   margin-block-start: 2em;
-  font-family: Roboto-Black;
+  font-family: Roboto-Black, sans-serif;
   font-size: 3em;
   color: rgb(34, 39, 44);
 }
 
 .home h2 {
   margin-block-start: .7em;
-  font-family: Roboto-Thin;
+  font-family: Roboto-Thin, sans-serif;
   color: rgb(34, 39, 44);
 }
 
 .home ul {
-    gap: 2em;
-    text-align: center;
-    margin-block-start: 5em;
-    padding-inline-start: 0;
+  gap: 2em;
+  text-align: center;
+  margin-block-start: 5em;
+  padding-inline-start: 0;
 }
 
 .home ul li {
-    width: 250px;
-    height: 250px;
-    padding: .7em;
-    border: 1px solid rgba(230, 230, 230, 0.559);
-    background-color: rgb(241, 241, 241);
-    border-radius: 1em;
-    display: flex;
-    flex-direction: column;
-    transition: .2s ease-in-out;
+  width: 250px;
+  height: 250px;
+  padding: .7em;
+  border: 1px solid rgba(230, 230, 230, 0.559);
+  background-color: rgb(241, 241, 241);
+  border-radius: 1em;
+  display: flex;
+  flex-direction: column;
+  transition: .2s ease-in-out;
 }
 
 .home ul li:hover {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 .home ul li p {
-    font-size: .9em;
-    font-family: Roboto-Regular;
-    flex-grow: 1;
+  font-size: .9em;
+  font-family: Roboto-Regular, sans-serif;
+  flex-grow: 1;
 }
 
 .home ul li img {
-    width: 80px;
+  width: 80px;
 }
 
 .home button {
@@ -57,7 +57,7 @@
   color: #FFFFFF;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  font-family: -apple-system, system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 500;
   line-height: 2.5;
@@ -79,6 +79,38 @@
 
 .home button:not([disabled]):hover {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+}
+
+.home hr {
+  margin: 0;
+  background-color: rgb(124, 124, 124);
+}
+
+.footer-wrapper {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(250, 247, 247);
+  box-shadow: rgba(100, 100, 111, 0.2) 7px 7px 29px 7px;
+}
+
+.home-footer {
+  margin: auto;
+}
+
+.home-footer>* {
+  margin-inline: .1em;
+}
+
+.home-footer img {
+  height: 1em;
+  width: 1em;
+}
+
+.home-footer p {
+  margin-block: .5em;
+  font-family: Roboto-Light, sans-serif;
+  color: orange;
 }
 
 /* Media Query */

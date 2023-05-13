@@ -24,7 +24,7 @@
 .close-compose {
     background-color: transparent;
     border: none;
-    font-family: Roboto-Medium;
+    font-family: Roboto-Medium, sans-serif;
     width: 25px;
     height: 25px;
     transition: .2s ease-in-out;
@@ -62,7 +62,7 @@
     box-sizing: border-box;
     border: none;
     background-color: transparent;
-    font-family: Roboto-Regular;
+    font-family: Roboto-Regular, sans-serif;
     padding-inline-start: .7em;
     resize: none;
 }
@@ -71,7 +71,7 @@
     position: absolute;
     right: 1.2em;
     bottom: .7em;
-    font-family: Roboto-Medium;
+    font-family: Roboto-Medium, sans-serif;
     padding: 1em;
     width: 5.8em;
     background-color: rgb(31, 77, 161);

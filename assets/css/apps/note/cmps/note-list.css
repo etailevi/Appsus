@@ -27,12 +27,12 @@
 }
 
 .note-item h1 {
-    font-family: Roboto-Regular;
+    font-family: Roboto-Regular, sans-serif;
     font-size: 1.5em;
     padding-inline-start: 1em;
 }
 
 .note-item p {
-    font-family: Roboto-Light;
+    font-family: Roboto-Light, sans-serif;
     font-size: 1em;
 }
