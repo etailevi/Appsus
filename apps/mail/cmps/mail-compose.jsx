@@ -33,7 +33,8 @@ export function MailCompose({ onMailSent, setIsComposeOpen }) {
 
     function onSaveMail(ev) {
         ev.preventDefault()
-        setMailToAdd(mail => ({ ...mail, sentAt: Date.now(), from: loggedInUserDetails.email }))
+        setMailToAdd(prevMail => ({ ...prevMail, sentAt: Date.now() }));
+        console.log(mailToAdd)
         mailService.save(mailToAdd).then(() => {
             showSuccessMsg('Mail has been successfully sent')
             onMailSent()

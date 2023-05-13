@@ -30,7 +30,7 @@ export function MailTrash() {
     if (mails.length === 0) return <div>The trash bin is empty</div>
     return (
         <section>
-            <MailList mails={mails} onRemoveMailFinal={onRemoveMailFinal} />
+            <MailList mails={mails} source="trash" onRemoveMailFinal={onRemoveMailFinal} />
         </section>
     )
 }

@@ -143,62 +143,79 @@ const loggedinUser = {
 
 _createMails()
 
-// function query(filterBy = {}) {
-//     return storageService.query(MAIL_KEY)
-//         .then(mails => {
-//             if (filterBy.subject) {
-//                 const regExp = new RegExp(filterBy.subject, 'i')
-//                 mails = mails.filter(mail => regExp.test(mail.subject))
-//             }
-//             if (filterBy.body) {
-//                 const regExp = new RegExp(filterBy.body, 'i')
-//                 mails = mails.filter(mail => regExp.test(mail.body))
-//             }
-//             if (filterBy.status) {
-//                 mails = mails.filter(mail => mail.status === filterBy.status)
-//             }
-//             if (filterBy.isRead) {
-//                 mails = mails.filter(mail => mail.isRead === filterBy.isRead)
-//             }
-//             if (filterBy.isStared) {
-//                 mails = mails.filter(mail => mail.isStared === filterBy.isStared)
-//             }
-//             if (filterBy.labels) {
-//                 mails = mails.filter(mail => mail.labels && mail.labels.some(label => filterBy.labels.includes(label)))
-//             }
-//             if (!filterBy.isRemoved) {
-//                 mails = mails.filter(mail => mail.isRemoved === filterBy.isRemoved)
-//             }
-//             if (filterBy.isRemoved) {
-//                 mails = mails.filter(mail => mail.isRemoved === filterBy.isRemoved)
-//             }
-//             if (filterBy.from) {
-//                 mails = mails.filter(mail => mail.from === filterBy.from)
-//             }
-//             if (filterBy.isImportant) {
-//                 mails = mails.filter(mail => mail.isImportant === filterBy.isImportant)
-//             }
-//             return mails
-//         })
-// }
-
 function query(filterBy = {}) {
     return storageService.query(MAIL_KEY)
-        .then((mails) => {
-            return _filterBy(mails, filterBy);
+        .then(mails => {
+            if (filterBy.subject) {
+                const regExp = new RegExp(filterBy.subject, 'i')
+                mails = mails.filter(mail => regExp.test(mail.subject))
+            }
+            if (filterBy.body) {
+                const regExp = new RegExp(filterBy.body, 'i')
+                mails = mails.filter(mail => regExp.test(mail.body))
+            }
+            if (filterBy.status) {
+                mails = mails.filter(mail => mail.status === filterBy.status)
+            }
+            if (filterBy.isRead) {
+                mails = mails.filter(mail => mail.isRead === filterBy.isRead)
+            }
+            if (filterBy.isStared) {
+                mails = mails.filter(mail => mail.isStared === filterBy.isStared)
+            }
+            if (filterBy.isRemoved || !filterBy.isRemoved) {
+                mails = mails.filter(mail => mail.isRemoved === filterBy.isRemoved)
+            }
+            if (filterBy.from) {
+                mails = mails.filter(mail => mail.from === filterBy.from)
+            }
+            if (!filterBy.from) {
+                mails = mails.filter(mail => mail.from !== loggedinUser.email)
+            }
+            if (filterBy.isImportant) {
+                mails = mails.filter(mail => mail.isImportant === filterBy.isImportant)
+            }
+            return mails
         })
 }
 
-function _filterBy(mails, filterBy) {
-    const filters = [];
-    for (const key in filterBy) {
-        const value = filterBy[key];
-        if (value) {
-            filters.push((mail) => mail[key] === value);
-        }
-    }
-    return mails.filter((mail) => filters.every((filter) => filter(mail)));
-}
+
+// function query(filterBy = {}) {
+//     return storageService.query(MAIL_KEY)
+//         .then((mails) => {
+//             return _filterBy(mails, filterBy);
+//         })
+// }
+
+// function _filterBy(mails, filterBy) {
+//     console.log(filterBy)
+//     const filters = [];
+//     for (const key in filterBy) {
+//         const value = filterBy[key];
+//         if (value) {
+//             if (key === "isRemoved" && value) {
+//                 return mails.filter((mail) => !mail[key]);
+//             } else {
+//                 filters.push((mail) => mail[key] === value);
+//             }
+//         }
+//     }
+//     return mails.filter((mail) => filters.every((filter) => filter(mail)));
+// }
+
+
+
+// function _filterBy(mails, filterBy) {
+//     console.log(filterBy)
+//     const filters = [];
+//     for (const key in filterBy) {
+//         const value = filterBy[key];
+//         if (value) {
+//             filters.push((mail) => mail[key] === value);
+//         }
+//     }
+//     return mails.filter((mail) => filters.every((filter) => filter(mail)));
+// }
 
 function get(mailId) {
     return storageService.get(MAIL_KEY, mailId)
@@ -220,7 +237,6 @@ function getDefaultFilter() {
     return { subject: '', body: '', name: '', to: '', from: '', isArchive: false, isRemoved: false, isDraft: false }
 }
 
-// status: '', isRead: '', isStared: '', labels: '', isArchive: '', isSchedule: ''
 function getNextMailId(mailId) {
     return storageService.query(MAIL_KEY)
         .then((mails) => {
@@ -267,12 +283,13 @@ function getRandomDate() {
 function getEmptyMail() {
     return {
         id: '',
-        from: '',
+        from: loggedinUser.email,
         name: '',
         to: '',
         isRead: false,
+        isRemoved: false,
         removeAt: null,
-        sentAt: '',
+        sentAt: Date.now(),
         isArchive: false,
         isSchedule: false,
         subject: '',

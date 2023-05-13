@@ -38,7 +38,7 @@ export function MailIndex() {
     function onRemoveMail(mailId) {
         mailService.get(mailId)
             .then((mail) => {
-                mail.isRemoved = true;
+                mail.isRemoved = true
                 return mail
             })
             .then((mail) => {

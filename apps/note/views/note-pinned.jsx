@@ -7,35 +7,22 @@ import { NoteList } from "../cmps/note-list.jsx"
 import { noteService } from "../services/note.service.js"
 import { showSuccessMsg } from "../../../services/event-bus.service.js"
 import { ThreeDots } from "../cmps/note-three-dots.jsx"
-import { PinnedNotes } from "../views/note-pinned.jsx"
 
-
-export function NoteIndex() {
+export function PinnedNotes() {
 
     const [notes, setNotes] = useState([])
     const [visible, setVisible] = useState(false)
     const [clicked, setClicked] = useState(false)
-    const inputRef = useRef(null);
     const [filterBy, setFilterBy] = useState(noteService.getDefaultFilter())
 
     useEffect(() => {
         loadNotes()
-        window.addEventListener("click", handleClickOutside);
-        return () => {
-            window.removeEventListener("click", handleClickOutside);
-        }
-    }, [filterBy, visible])
+    }, [visible])
 
     function loadNotes() {
         noteService.query(filterBy).then(setNotes)
     }
 
-    function handleClickOutside(event) {
-        if (inputRef.current && !inputRef.current.contains(event.target)) {
-            setVisible(false)
-        }
-        console.log(visible)
-    }
 
     function onRemoveNote(noteId) {
         noteService.remove(noteId).then(() => {
@@ -43,14 +30,6 @@ export function NoteIndex() {
             setNotes(updatedNotes)
             showSuccessMsg(`Note removed!`)
         })
-    }
-
-    function onAddNote(note) {
-        noteService.save(note).then(note => {
-            setNotes(prevNotes => [...prevNotes, note])
-        })
-
-        // showSuccessMsg(`Note has been added`)
     }
 
     function onSetFilter(filterBy) {
@@ -67,14 +46,14 @@ export function NoteIndex() {
                 <ul onClick={() => onChangeVisible()} className="note-input clean-list flex align-center justify-center" >
                     <div className="add-note-bar">
                         <li>
-                            <input ref={inputRef} type="text" name="" id="" placeholder="What's on your mind..." />
+                            <input type="text" name="" id="" placeholder="What's on your mind..." />
                         </li>
                         <li className="add-note-opts flex row align-center">
-                            {/* <button><img src="./assets/img/imgs-notes/phrase.svg" alt="text-input" /></button> */}
-                            {/* <button><img src="./assets/img/imgs-notes/input-image.svg" alt="input-image" /></button> */}
-                            {/* <button><img src="./assets/img/imgs-notes/youtube.svg" alt="youtube-input" /></button> */}
-                            {/* {!clicked && <button><img src="./assets/img/imgs-notes/three-dots.svg" alt="three-dots" /></button>} */}
-                            {/* {!!clicked && <ThreeDots />} */}
+                            <button><img src="./assets/img/imgs-notes/phrase.svg" alt="text-input" /></button>
+                            <button><img src="./assets/img/imgs-notes/input-image.svg" alt="input-image" /></button>
+                            <button><img src="./assets/img/imgs-notes/youtube.svg" alt="youtube-input" /></button>
+                            {!clicked && <button><img src="./assets/img/imgs-notes/three-dots.svg" alt="three-dots" /></button>}
+                            {!!clicked && <ThreeDots />}
                         </li>
                     </div>
                 </ul>

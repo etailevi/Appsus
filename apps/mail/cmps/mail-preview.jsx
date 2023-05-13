@@ -31,7 +31,6 @@ export function MailPreview({ mail, onRemoveMail, onScheduleMail, onUpdateMail }
                     <img className="show-hovered" onClick={() => onUpdateMail(mail, 'isArchive')} src="./assets/img/imgs-gmail/archive-mail.svg" alt="archive mail" />
                     <img className="show-hovered" onClick={() => onRemoveMail(mail.id)} src="./assets/img/imgs-gmail/delete-mail.svg" alt="delete mail" />
                     <img className="show-hovered" onClick={() => onUpdateMail(mail, 'isRead')} src={readEnvelope} alt="mark mail as read" />
-                    <img className="show-hovered" onClick={() => onScheduleMail(mail)} src="./assets/img/imgs-gmail/schedule.svg" alt="schedule mail" />
                 </li>
             </ul>
         </article >
