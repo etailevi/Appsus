@@ -40,20 +40,20 @@ export function NoteEdit({ setActivatedEdit, note, setNoteToBeEdited }) {
     const { info } = note
     return (
         <section className="note-edit">
-            <ul className="note-add-input clean-list">
+            <ul className="note-edit-input clean-list">
                 <form onSubmit={onSaveEditedNote}>
-                    <li className="input-title flex column">
+                    <li className="input-title-edit flex column">
                         <label htmlFor="title"></label>
                         <input value={info.title} onChange={handleChange} name="title" id="title" type="text" />
                         <textarea value={info.txt} onChange={handleChange} name="txt" id="text" type="text" rows="3"></textarea>
                     </li>
-                    <li className="input-btns flex row align-center justify-center space-between">
+                    <li className="input-edit-btns flex row align-center justify-center space-between">
                         {/* <button type="button"><img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" /> */}
                         {/* {!!colorPaletteVisible && <DynamicCmp noteColor={noteColor} onSetNoteStyle={onSetNoteStyle} />}</button> */}
-                        <button type="button"><img src="./assets/img/imgs-notes/input-image.svg" alt="" /></button>
-                        <button type="button"><img src="./assets/img/imgs-notes/archive.svg" alt="" /></button>
-                        <button type="button"><img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" /></button>
-                        <button>Close</button>
+                        {/* <button type="button"><img src="./assets/img/imgs-notes/input-image.svg" alt="" /></button> */}
+                        {/* <button type="button"><img src="./assets/img/imgs-notes/archive.svg" alt="" /></button> */}
+                        {/* <button type="button"><img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" /></button> */}
+                        <button><img src="./assets/img/imgs-notes/bookmark.svg" alt="" /></button>
                     </li>
                 </form>
             </ul>

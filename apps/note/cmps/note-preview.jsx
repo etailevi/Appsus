@@ -39,12 +39,12 @@ export function NotePreview({ note, onRemoveNote, setNotes }) {
             <article className="note-card" style={{ backgroundColor: 'note.style.backgroundColor' }}>
                 {!!note.info && <h1>{noteToBeEdited.info.title}</h1>}
                 {!!note.info && <p>{noteToBeEdited.info.txt}</p>}
-                <button className="note-pin" onClick={() => onPinNote(note.id)} ><img src="./assets/img/imgs-notes/pin.svg" alt="Pin Note" /></button>
+                {/* <button className="note-pin" onClick={() => onPinNote(note.id)} ><img src="./assets/img/imgs-notes/pin.svg" alt="Pin Note" /></button> */}
                 <ul>
                     <li className="flex row">
                         <button className="edit-note" onClick={() => setActivatedEdit(true)} ><img src="./assets/img/imgs-notes/edit.svg" alt="Edit-Note" /></button>
                         {!!activatedEdit && <NoteEdit setNoteToBeEdited={setNoteToBeEdited} note={noteToBeEdited} setActivatedEdit={setActivatedEdit} />}
-                        <button className="mail-send" onClick={() => onPinNote(note.id)} ><img src="./assets/img/imgs-gmail/mail.svg" alt="Mail" /></button>
+                        {/* <button className="mail-send" onClick={() => onPinNote(note.id)} ><img src="./assets/img/imgs-gmail/mail.svg" alt="Mail" /></button> */}
                         <button className="palette-color" onClick={() => toggleColorPalette()} ><img src="./assets/img/imgs-notes/color-palette.svg" alt="Color Palette" /></button>
                         {!!colorPaletteVisible && <DynamicCmp toggleColorPalette={toggleColorPalette} noteColor={noteColor} onSetNoteStyle={onSetNoteStyle} />}
                         <button className="note-trash" onClick={(ev) => onRemoveNote(note.id)} ><img src="./assets/img/imgs-notes/trash.svg" alt="Trash" /></button>

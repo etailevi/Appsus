@@ -115,9 +115,19 @@
 
 /* Media Query */
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 650px) {
   .home ul {
     flex-wrap: wrap;
     flex-direction: column;
+  }
+
+  .home h1 {
+    font-size: 2.5em;
+    margin-inline: 1em;
+  }
+  
+  .home h2 {
+    font-size: 1.25em;
+    margin-inline: 1em;
   }
 }

@@ -1,6 +1,6 @@
 
 export function ColorInput({ onSetNoteStyle, toggleColorPalette }) {
-    const colors = ['#B4FF9F', '#F9FFA4', '#FFD59E', '#FFA1A1']
+    const colors = ['#FFD1D1', '#FBFFDE', '#D7FDDF', '#E0FFFD', '#D0D0FE', '#F9DEFF', 'lightgray', 'white']
 
 
     function onChooseColor(color) {

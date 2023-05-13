@@ -18,12 +18,12 @@ export function Home() {
                     <p>Capture your thoughts, ideas, and inspirations seamlessly with our versatile note-taking app, keeping you organized and productive.</p>
                     <NavLink to="/note"><button className="btn btn-card">Write a note</button></NavLink>
                 </li>
-                <li>
+                {/* <li>
                     <div className="img-container"><img src="./assets/img/home/books.svg" alt="Books" /></div>
                     <h3>Books</h3>
                     <p>Immerse yourself in a world of literature with our vast collection of books, exploring various genres and authors.</p>
                     <NavLink to="/book"><button className="btn btn-card">Read a book</button></NavLink>
-                </li>
+                </li> */}
             </ul>
             <section className="footer-wrapper">
                 <hr />

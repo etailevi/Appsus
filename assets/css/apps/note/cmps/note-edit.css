@@ -1,0 +1,75 @@
+.note-edit {
+    position: fixed;
+    top: 40%;
+    left: 40%;
+}
+
+.note-edit-input {
+    width: 350px;
+    height: 170px;
+    margin: auto;
+    margin-block: 35px;
+    font-size: 1.2em;
+    border-radius: 1.2em;
+    background-color: white;
+    border: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 2px 28px;
+    padding: 0;
+    padding-block-end: 40px;
+    position: relative;
+}
+
+.note-edit-input input,
+textarea {
+    border: none;
+    border-block-end: 1px solid rgb(193, 193, 193);
+}
+
+/* .note-edit-input input:last-of-type {
+    flex: 1;
+} */
+
+.input-title-edit input {
+    font-size: 1.1em;
+    padding-inline: 0.6em;
+    padding-block: 0.4em;
+    background-color: transparent;
+}
+
+.input-title-edit textarea {
+    width: 100%;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: none;
+    background-color: transparent;
+    font-size: 1em;
+    font-family: Roboto-Regular, sans-serif;
+    padding-inline-start: 0.6em;
+    margin-block-end: 30px;
+    resize: none;
+}
+
+.input-title-edit textarea:focus,
+.input-title-edit input:focus {
+    outline: 0;
+}
+
+.note-edit-input .input-edit-btns {
+    /* position: absolute;
+    bottom: 8px;
+    left: 15px;
+    width: 420px; */
+}
+
+.note-edit-input .input-edit-btns button {
+    background-color: transparent;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+
+.note-edit-input .input-edit-btns button:hover {
+    background-color: rgb(220, 213, 200);
+    border-radius: 2em;
+}

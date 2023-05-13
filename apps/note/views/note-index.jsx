@@ -68,11 +68,11 @@ export function NoteIndex() {
                             <input ref={inputRef} type="text" name="" id="" placeholder="What's on your mind..." />
                         </li>
                         <li className="add-note-opts flex row align-center">
-                            <button><img src="./assets/img/imgs-notes/phrase.svg" alt="text-input" /></button>
-                            <button><img src="./assets/img/imgs-notes/input-image.svg" alt="input-image" /></button>
-                            <button><img src="./assets/img/imgs-notes/youtube.svg" alt="youtube-input" /></button>
-                            {!clicked && <button><img src="./assets/img/imgs-notes/three-dots.svg" alt="three-dots" /></button>}
-                            {!!clicked && <ThreeDots />}
+                            {/* <button><img src="./assets/img/imgs-notes/phrase.svg" alt="text-input" /></button> */}
+                            {/* <button><img src="./assets/img/imgs-notes/input-image.svg" alt="input-image" /></button> */}
+                            {/* <button><img src="./assets/img/imgs-notes/youtube.svg" alt="youtube-input" /></button> */}
+                            {/* {!clicked && <button><img src="./assets/img/imgs-notes/three-dots.svg" alt="three-dots" /></button>} */}
+                            {/* {!!clicked && <ThreeDots />} */}
                         </li>
                     </div>
                 </ul>
