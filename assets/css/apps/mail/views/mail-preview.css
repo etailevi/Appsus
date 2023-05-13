@@ -29,7 +29,7 @@
 
 .mail-preview-content h5 {
     font-size: .8em;
-    font-family: Roboto-Light;
+    font-family: Roboto-Light, sans-serif;
 }
 
 .mail-sender-name {

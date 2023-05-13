@@ -3,7 +3,7 @@
 }
 
 .filter-btns button {
-    font-family: Roboto-Medium;
+    font-family: Roboto-Medium, sans-serif;
     font-size: 1em;
     align-self: center;
     width: 100%;
@@ -14,7 +14,7 @@
 
 .filter-btns button,
 .btn-compose {
-    font-family: Roboto-Medium;
+    font-family: Roboto-Medium, sans-serif;
     padding: 1em;
     /* width: 7.5em; */
     background-color: white;

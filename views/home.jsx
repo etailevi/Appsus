@@ -25,6 +25,12 @@ export function Home() {
                     <NavLink to="/book"><button className="btn btn-card">Read a book</button></NavLink>
                 </li>
             </ul>
+            <section className="footer-wrapper">
+                <hr />
+                <footer className="home-footer">
+                    <p>© This project made with ♥ by Steve Bendersky and Etai Levi.</p>
+                </footer>
+            </section>
         </section>
     )
 }

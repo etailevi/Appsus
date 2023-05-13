@@ -6,10 +6,10 @@
     margin: 0;
     padding: 0;
     background-color: white;
-    font-family: Roboto-medium;
+    font-family: Roboto-medium, sans-serif;
 }
 
 .read {
     background-color: #f2f6fc;
-    font-family: Roboto-light;
+    font-family: Roboto-light, sans-serif;
 }

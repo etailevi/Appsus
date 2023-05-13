@@ -1,6 +1,6 @@
 header {
     background: orange;
-    border-bottom: 2px solid white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .app-header {
@@ -23,6 +23,7 @@ nav a:active {
 .app-header a img {
     width: 30px;
     padding: .3em;
+    transition: .2s ease-in-out;
 }
 
 .app-header a img:not(.logo-header):hover {
