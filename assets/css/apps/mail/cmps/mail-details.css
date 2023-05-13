@@ -1,5 +1,6 @@
 .mail-details {
     margin-block-start: 5em;
+    position: relative;
 }
 
 .mail-details ul {
