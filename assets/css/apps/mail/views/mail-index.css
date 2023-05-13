@@ -8,8 +8,11 @@
 
 .filter-btns button {
     font-family: Roboto-Medium;
+    font-size: 1em;
+    align-self: center;
     width: 100%;
     height: 3em;
+    text-align: left;
     margin-block-end: .1em;
 }
 
@@ -29,6 +32,7 @@
 }
 
 .filter-btns button {
+    padding-inline-start: 2em;
     border-radius: 0 2em 2em 0;
 }
 
@@ -44,7 +48,11 @@
     left: 1.5em;
 }
 
-.filter-btns button img,
+.filter-btns button img {
+    width: 1.8em;
+    padding-inline-end: .8em;
+}
+
 .btn-compose i {
     width: 1.5em;
     padding-inline-end: .2em;
