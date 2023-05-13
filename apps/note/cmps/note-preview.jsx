@@ -30,7 +30,7 @@ export function NotePreview({ note, onRemoveNote }) {
     }
 
     return (
-        <section style={noteStyle} className="note-container" >
+        <section style={note.style} className="note-container" >
             <article className="note-card" style={{ backgroundColor: 'note.style.backgroundColor' }}>
                 {!!note.info && <h1>{note.info.title}</h1>}
                 {!!note.info && <p>{note.info.txt}</p>}
