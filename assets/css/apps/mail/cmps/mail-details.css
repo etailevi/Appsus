@@ -39,6 +39,27 @@
     border-radius: 50%;
 }
 
+.back-link, .remove-link {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+}
+
+.back-link img, .remove-link img {
+    background-color: orange;
+    border-radius: 50%;
+}
+
+.back-link {
+    bottom: -22px;
+    left: 30px;
+}
+
+.remove-link {
+    bottom: -22px;
+    left: 90px;
+}
+
 /* Media Query */
 
 @media screen and (max-width: 700px) {

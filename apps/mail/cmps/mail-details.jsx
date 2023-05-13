@@ -91,8 +91,12 @@ export function MailDetails() {
                 <li className="next-mail flex align-center">
                     <Link to={`/mail/${nextMailId}`}><img src="./assets/img/imgs-gmail/arrow-right.svg" alt="next mail" /></Link>
                 </li>
-                <li onClick={() => onBack()} >Back</li>
-                <li onClick={() => onRemoveMail(mailId)} >Remove</li>
+                <li className="back-link" onClick={() => onBack()} >
+                    <img src="./assets/img/imgs-gmail/arrow-back.svg" alt="delete mail" />
+                </li>
+                <li className="remove-link" onClick={() => onRemoveMail(mailId)} >
+                    <img src="./assets/img/imgs-gmail/delete-mail.svg" alt="delete mail" />
+                </li>
             </ul>
         </section>
     )
