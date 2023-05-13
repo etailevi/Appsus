@@ -1,9 +1,20 @@
 .user-msg {
     background-color: lightgray;
-    padding: 1em;
-    position: absolute;
-    top: 1em;
+    position: fixed;
+    bottom: 1em;
     right: 1em;
+    height: 2.3em;
+    color: white;
+    font-family: Roboto-Medium;
+    font-weight: bold;
+    border-radius: 1em;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    transition: .2s ease-in-out;
+}
+
+.user-msg ul {
+    margin: 0;
+    padding-inline-start: .5em;
 }
 
 .user-msg.success {
@@ -11,11 +22,20 @@
 }
 
 .user-msg.error {
-    background-color: lightpink;
+    background-color: lightcoral;
 }
 
 
-.user-msg button{
-    float: right;
-    margin: 1em;
+.user-msg button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: .8em;
+    transition: .2s ease-in-out;
+}
+
+.user-msg button:hover {
+    background-color: white;
+    color: rgb(197, 25, 25);
+    border-radius: 50%;
 }
