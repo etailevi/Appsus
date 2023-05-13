@@ -46,15 +46,9 @@ export function NoteAdd({ onAddNote, note }) {
     function onSaveNote(ev) {
         console.log('saved')
         ev.preventDefault()
-<<<<<<< HEAD
         onAddNote(noteToAdd)
         // noteService.save(noteToAdd).then(() => {
         // }).then(showSuccessMsg('New note added!'))
-=======
-        noteService.save(note).then(() => {
-            onAddNote()
-        }).then(showSuccessMsg('New note added!'))
->>>>>>> 0e69d83764afdfff54317042bf6cce1c1903365f
     }
 
     function onColorSelect(color) { }

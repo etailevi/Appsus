@@ -27,6 +27,7 @@
     font-family: Roboto-Medium;
     width: 25px;
     height: 25px;
+    transition: .2s ease-in-out;
 }
 
 .close-compose:hover {

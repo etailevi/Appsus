@@ -10,13 +10,12 @@ import { ColorInput } from "./dynamic-inputs/color-input.jsx"
 import { NoteEdit } from "../cmps/note-edit.jsx"
 
 
-export function NotePreview({ note, onRemoveNote, setNotes }) {
+export function NotePreview({ note, onRemoveNote, setNotes, setNotes }) {
     const [noteToBeEdited, setNoteToBeEdited] = useState(note)
     const [cmpType, setCmpType] = useState('color')
     const [noteStyle, setNoteStyle] = useState({ backgroundColor: 'pink', })
     const [activatedEdit, setActivatedEdit] = useState(false)
-    const [colorPaletteVisible, setColorPaletteVisible] = useState(false)
-    const noteColor = 'color'
+
 
     function onSetNoteStyle(newStyle) {
         setNoteStyle((prevStyle) => ({ ...prevStyle, ...newStyle }))
@@ -35,11 +34,7 @@ export function NotePreview({ note, onRemoveNote, setNotes }) {
     }
 
     return (
-<<<<<<< HEAD
         <section style={noteToBeEdited.style} className="note-container" >
-=======
-        <section style={note.style} className="note-container" >
->>>>>>> 0e69d83764afdfff54317042bf6cce1c1903365f
             <article className="note-card" style={{ backgroundColor: 'note.style.backgroundColor' }}>
                 {!!note.info && <h1>{noteToBeEdited.info.title}</h1>}
                 {!!note.info && <p>{noteToBeEdited.info.txt}</p>}
