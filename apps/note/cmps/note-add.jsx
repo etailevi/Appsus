@@ -5,7 +5,7 @@ import { noteService } from "../services/note.service.js"
 import { showSuccessMsg } from "../../../services/event-bus.service.js"
 import { utilService } from "../services/util.service.js"
 
-export function NoteAdd({ onAddNote }) {
+export function NoteAdd({ onAddNote, note }) {
     const [noteToAdd, setNoteToAdd] = useState(noteService.getEmptyNote())
     const [placeholder, setPlaceholder] = useState("Enter your note here..");
     const [noteColor, setNoteColor] = useState('color')
@@ -43,10 +43,11 @@ export function NoteAdd({ onAddNote }) {
     }
 
     function onSaveNote(ev) {
+        console.log('saved')
         ev.preventDefault()
-        noteService.save(noteToAdd).then(() => {
+        noteService.save(note).then(() => {
             onAddNote()
-        })
+        }).then(showSuccessMsg('New note added!'))
     }
 
     function onColorSelect(color) { }
