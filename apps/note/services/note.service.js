@@ -19,7 +19,7 @@ const gNotes = [
         id: utilService.makeId(),
         createdAt: 1112222,
         type: 'NoteTxt',
-        isPinned: true,
+        isPinned: false,
         style: {
             backgroundColor: '#FFD1D1'
         },
@@ -167,7 +167,7 @@ function save(note) {
 }
 
 function getDefaultFilter() {
-    return { title: '', type: '' }
+    return { title: '', type: '', isPinned: true }
 }
 
 function getNextNoteId(noteId) {
@@ -198,6 +198,7 @@ function getEmptyNote() {
     return {
         id: '',
         createdAt: Date.now(),
+        sentAt: '',
         type: 'NoteTxt',
         isPinned: false,
         style: {

@@ -50,9 +50,30 @@ export function MailDetails() {
         mailService.getPreviousMailId(mailId).then(setPreviousMailId)
     }
 
+    function onRemoveMail(mailId) {
+        mailService.get(mailId)
+            .then((mail) => {
+                mail.isRemoved = true;
+                return mail
+            })
+            .then((mail) => {
+                return mailService.save(mail)
+            })
+            .then(() => {
+                navigate('/mail')
+                const updatedMails = mails.filter((mail) => mail.id !== mailId);
+                setMails(updatedMails)
+                showSuccessMsg(`Mail has been sent to the trash bin!`);
+            })
+            .catch((err) => console.error(err));
+    }
+
+
+
     function onBack() {
         navigate('/mail')
     }
+
     if (!mail) return <div>Loading...</div>
     const { id, subject, body, sentAt, removeAt, name, to, from } = mail
     return (
@@ -70,9 +91,8 @@ export function MailDetails() {
                 <li className="next-mail flex align-center">
                     <Link to={`/mail/${nextMailId}`}><img src="./assets/img/imgs-gmail/arrow-right.svg" alt="next mail" /></Link>
                 </li>
-                {/* <li>Back
-                Delete
-            </li> */}
+                <li onClick={() => onBack()} >Back</li>
+                <li onClick={() => onRemoveMail(mailId)} >Remove</li>
             </ul>
         </section>
     )
