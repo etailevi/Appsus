@@ -1,7 +1,9 @@
 
-export function ColorInput({ onSetNoteStyle, noteId }) {
+export function ColorInput({ onSetNoteStyle }) {
     const colors = ['#B4FF9F', '#F9FFA4', '#FFD59E', '#FFA1A1']
 
+
+    console.log('entered here')
     function onChooseColor(color) {
         const newStyle = { backgroundColor: color }
         onSetNoteStyle(newStyle)

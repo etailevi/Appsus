@@ -17,6 +17,7 @@ export function NoteAdd({ onAddNote, note }) {
 
     function onSetNoteStyle(newStyle) {
         setNoteStyle((prevStyle) => ({ ...prevStyle, ...newStyle }))
+        setNoteToAdd(prevNote => ({ ...prevNote, ...noteStyle }))
     }
 
     useEffect(() => {
@@ -53,7 +54,7 @@ export function NoteAdd({ onAddNote, note }) {
     function onColorSelect(color) { }
 
 
-    const { title, txt } = noteToAdd
+    const { title, txt, id } = noteToAdd
     return (
         <section>
 
@@ -65,13 +66,14 @@ export function NoteAdd({ onAddNote, note }) {
                         <textarea value={txt} onChange={handleChange} name="txt" id="text" type="text" placeholder={placeholder} rows="3"></textarea>
                     </li>
                     <li className="input-btns flex row align-center justify-center space-between">
-                        <button type="button"><img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" />
-                            {!!colorPaletteVisible && <DynamicCmp noteColor={noteColor} onSetNoteStyle={onSetNoteStyle} />}</button>
+                        <button type="button"><img onClick={() => toggleColorPalette()} src="./assets/img/imgs-notes/color-palette.svg" alt="" /></button>
+                        {!!colorPaletteVisible && <ColorInput noteColor={noteColor} onSetNoteStyle={onSetNoteStyle} />}
                         <button type="button"><img src="./assets/img/imgs-notes/input-image.svg" alt="" /></button>
                         <button type="button"><img src="./assets/img/imgs-notes/archive.svg" alt="" /></button>
                         <button type="button"><img onClick={() => onDeleteText()} src="./assets/img/imgs-notes/back.svg" alt="" /></button>
                         <button><img src="./assets/img/imgs-notes/bookmark.svg" alt="" /></button>
                     </li>
+                    {/* noteId={id} noteColor={noteColor} */}
                 </form>
             </ul>
         </section>
@@ -82,7 +84,7 @@ function DynamicCmp(props) {
     switch (props.noteColor) {
         case 'color':
             return <ColorInput {...props} />
-        // case 'fontSize':
-        //     return <FontsizeInput {...props} />
+        case 'fontSize':
+            return <FontsizeInput {...props} />
     }
 }
