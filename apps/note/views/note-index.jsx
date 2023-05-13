@@ -18,10 +18,10 @@ export function NoteIndex() {
 
     useEffect(() => {
         loadNotes()
-        // window.addEventListener("click", handleClickOutside);
-        // return () => {
-        //     window.removeEventListener("click", handleClickOutside);
-        // }
+        window.addEventListener("click", handleClickOutside);
+        return () => {
+            window.removeEventListener("click", handleClickOutside);
+        }
     }, [filterBy, visible])
 
     function loadNotes() {
@@ -34,7 +34,8 @@ export function NoteIndex() {
         }
     }
 
-    function onRemoveNote(noteId) {
+    function onRemoveNote(noteId, ev) {
+        ev.stopPropagation()
         noteService.remove(noteId).then(() => {
             const updatedNotes = notes.filter(note => note.id !== noteId)
             setNotes(updatedNotes)
@@ -56,7 +57,6 @@ export function NoteIndex() {
         setVisible(prevIsVisible => !prevIsVisible)
     }
 
-    if (!notes) return 'Loading...'
     return (
         <section className="note-index full main-layout">
             {!visible &&
