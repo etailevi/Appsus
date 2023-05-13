@@ -2,10 +2,6 @@
     padding-inline-start: 0;
 }
 
-.mail-index li:first-of-type{
-    margin-inline-end: .5em;
-}
-
 .filter-btns button {
     font-family: Roboto-Medium;
     font-size: 1em;
@@ -29,10 +25,11 @@
 
 .filter-btns {
     width: 15em;
+    margin-inline-end: .5em;
 }
 
 .filter-btns button {
-    padding-inline-start: 2em;
+    padding-inline-start: 1em;
     border-radius: 0 2em 2em 0;
 }
 

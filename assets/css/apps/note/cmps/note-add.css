@@ -69,8 +69,9 @@ textarea {
 }
 
 .color-input-container {
-    background-color: var(--clr1bg-light);
-    padding: 20px;
+    background-color: rgb(248, 248, 248);
+    border-radius: 2em;
+    padding: .5em;
     display: flex;
     gap: 10px;
 }
@@ -78,8 +79,9 @@ textarea {
 .color-input {
     background-color: var(--clr2bg);
     padding: 5px;
-    min-height: 40px;
-    min-width: 40px;
+    min-height: 15px;
+    min-width: 15px;
+    border-radius: 50%;
     cursor: pointer;
 
     display: grid;

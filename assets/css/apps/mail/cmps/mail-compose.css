@@ -18,7 +18,7 @@
 .compose-header {
     background-color: rgb(230, 236, 240);
     padding: .7em;
-    margin-block-start: 0;
+    margin: 0;
 }
 
 .close-compose {

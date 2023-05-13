@@ -1,8 +1,41 @@
+.mail-details {
+    margin-block-start: 5em;
+}
+
 .mail-details ul {
+    background-color: rgb(227, 233, 231);
     margin: auto;
     padding: 1em;
+    border-radius: 2em;
+    margin-inline: 8em;
+    position: relative;
+}
+
+.mail-content {
+    justify-content: flex-start;
+}
+
+.mail-content .email-sender-details {
+    color: gray;
+    margin-block-end: 2em;
 }
 
 .mail-details img {
+    padding: .5em;
     width: 30px;
+    height: 30px;
+    transition: .2s ease-in-out;
+}
+
+.mail-details img:hover {
+    background-color: white;
+    border-radius: 50%;
+}
+
+/* Media Query */
+
+@media screen and (max-width: 700px) {
+    .mail-details ul {
+        margin-inline: .5em;
+    }
 }
