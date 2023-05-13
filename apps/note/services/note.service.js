@@ -196,7 +196,7 @@ function _createNotes() {
 
 function getEmptyNote() {
     return {
-        id: utilService.makeId(),
+        id: '',
         createdAt: Date.now(),
         type: 'NoteTxt',
         isPinned: false,

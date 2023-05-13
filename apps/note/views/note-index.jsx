@@ -30,12 +30,12 @@ export function NoteIndex() {
 
     function handleClickOutside(event) {
         if (inputRef.current && !inputRef.current.contains(event.target)) {
-            setVisible(false);
+            setVisible(true);
         }
+        console.log(visible)
     }
 
-    function onRemoveNote(noteId, ev) {
-        ev.stopPropagation()
+    function onRemoveNote(noteId) {
         noteService.remove(noteId).then(() => {
             const updatedNotes = notes.filter(note => note.id !== noteId)
             setNotes(updatedNotes)
@@ -43,10 +43,12 @@ export function NoteIndex() {
         })
     }
 
-    function onAddNote() {
-        onChangeVisible()
-        loadNotes()
-        showSuccessMsg(`Note has been added`)
+    function onAddNote(note) {
+        noteService.save(note).then(note => {
+            setNotes(prevNotes => [...prevNotes, note])
+        })
+
+        // showSuccessMsg(`Note has been added`)
     }
 
     function onSetFilter(filterBy) {
@@ -79,7 +81,7 @@ export function NoteIndex() {
                 <NoteAdd onAddNote={onAddNote} />
             }
             <NoteFilter DynamicCmp onSetFilter={onSetFilter} filterBy={filterBy} />
-            <NoteList notes={notes} onRemoveNote={onRemoveNote} />
+            <NoteList setNotes={setNotes} notes={notes} onRemoveNote={onRemoveNote} />
         </section >
     )
 }

@@ -5,9 +5,8 @@ import { NoteEdit } from "../cmps/note-edit.jsx"
 const { useEffect, useState } = React
 
 
-export function NoteList({ notes, onRemoveNote }) {
+export function NoteList({ notes, onRemoveNote, setNotes }) {
 
-    const [activatedEdit, setActivatedEdit] = useState(false)
 
     // useEffect(() => {
     //     setActivatedEdit()
@@ -17,12 +16,12 @@ export function NoteList({ notes, onRemoveNote }) {
         <ul className="note-wrapper clean-list columns">
             {notes.map(note =>
                 <li key={note.id} className="note-item">
-                    <section onClick={() => setActivatedEdit(true)} >
-                        {!!activatedEdit && <NoteEdit setActivatedEdit={setActivatedEdit} />}
-                        <NotePreview note={note} onRemoveNote={onRemoveNote} />
+                    <section >
+                        <NotePreview setNotes={setNotes} note={note} onRemoveNote={onRemoveNote} />
                     </section>
                 </li>
             )}
+            {/* onClick = {() => setActivatedEdit(true) */}
         </ul>
     )
 }

@@ -17,7 +17,7 @@ export function NoteAdd({ onAddNote }) {
 
     function onSetNoteStyle(newStyle) {
         setNoteStyle((prevStyle) => ({ ...prevStyle, ...newStyle }))
-        setNoteToAdd(prevNote => ({ ...prevNote, ...noteStyle }))
+        setNoteToAdd(prevNote => ({ ...prevNote, style: { ...newStyle } }))
     }
 
     useEffect(() => {
@@ -45,9 +45,9 @@ export function NoteAdd({ onAddNote }) {
 
     function onSaveNote(ev) {
         ev.preventDefault()
-        noteService.save(noteToAdd).then(() => {
-            onAddNote()
-        }).then(showSuccessMsg('New note added!'))
+        onAddNote(noteToAdd)
+        // noteService.save(noteToAdd).then(() => {
+        // }).then(showSuccessMsg('New note added!'))
     }
 
     function onColorSelect(color) { }
