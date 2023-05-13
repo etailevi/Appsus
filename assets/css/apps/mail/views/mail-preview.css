@@ -27,6 +27,11 @@
     flex-grow: 1;
 }
 
+.mail-preview-content h5 {
+    font-size: .8em;
+    font-family: Roboto-Light;
+}
+
 .mail-sender-name {
     width: 10em;
     margin-inline-start: 1em;

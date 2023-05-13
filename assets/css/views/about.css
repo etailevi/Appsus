@@ -1,0 +1,43 @@
+.about {
+    margin-inline: 4em;
+    padding: 3em;
+    /* background-color: rgb(231, 231, 231); */
+}
+
+.about h1 {
+    text-align: center;
+    font-size: 3em;
+    font-family: Roboto-Bold, sans-serif;
+    color: rgb(36, 41, 54);
+}
+
+.about p:first-of-type {
+    font-family: Roboto-Regular, sans-serif;
+}
+
+.about p {
+    color: rgb(36, 41, 54);
+    font-family: Roboto-Light, sans-serif;
+    font-size: 1.2em;
+    line-height: 1.3em;
+}
+
+/* Medium */
+
+@media screen and (max-width: 800px) {
+    .about {
+        margin-inline: 1em;
+        padding-block: 3em;
+        padding-inline: 1.5em;
+    }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 540px) {
+    .about {
+        margin-inline: 1em;
+        padding-block: 3em;
+        padding-inline: 0;
+    }
+}
